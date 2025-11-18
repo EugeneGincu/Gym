@@ -1,0 +1,49 @@
+body {
+    width: 95%;
+    margin: auto;
+    background-color: hsl(130, 70%, 80%); /*hsl(40, 50%, 50%);*/
+}
+
+header {
+    height: 80px;
+    /*outline: 1px solid green;*/
+    align-content: center;
+    margin: 0;
+    /*background-color: lightblue;*/
+}
+
+/* NAV */
+header nav {
+    /*outline:1px solid red;*/
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    color: firebrick;
+    /*background-color: indianred;*/
+}
+
+header nav a {
+    flex: 0 1 auto;
+    /*outline: 1px solid red;*/
+    align-content: center;
+    padding: 10px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+:link, :visited{
+    color: inherit;
+}
+
+a:hover {
+    background-color: red;/*hsl(0, 70%, 50%);*/
+    border-radius: 10px;
+    color: black;
+    box-shadow: inset 0 3px 10px 0 hsl(0, 70%, 45%), inset 0 -3px 10px 0 hsl(0, 70%, 45%);
+}
+
+/* HOME PAGE */
+body#home {
+    display: grid;
+}
+
