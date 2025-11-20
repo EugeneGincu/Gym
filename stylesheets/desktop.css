@@ -1,7 +1,8 @@
+@charset "utf-8";
 body {
     width: 95%;
     margin: auto;
-    background-color: hsl(130, 70%, 80%); /*hsl(40, 50%, 50%);*/
+    background-color: hsl(50, 90%, 75%); /*hsl(40, 50%, 50%);*/
 }
 
 header {
