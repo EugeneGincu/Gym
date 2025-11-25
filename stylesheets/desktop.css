@@ -15,7 +15,7 @@ header {
 }
 
 /* NAV */
-header nav {
+header > nav {
     /*outline:1px solid red;*/
     display: flex;
     flex-flow: row nowrap;
@@ -24,13 +24,16 @@ header nav {
     /*background-color: indianred;*/
 }
 
-header nav a {
+header > nav a {
     flex: 0 1 auto;
     /*outline: 1px solid red;*/
     align-content: center;
     padding: 10px;
     margin: 0 10px;
     text-decoration: none;
+}
+
+div.dropdown {
 }
 
 header nav a:first-child {
