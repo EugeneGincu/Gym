@@ -2,8 +2,13 @@
 
 html {
     height: 100%;
+
 }
 
 body {
-    min-height:100%;
+    /*min-height:95%;*/
+    width: 95%;
+    margin: auto;
+    background-color: hsl(50, 90%, 75%); /*hsl(40, 50%, 50%);*/
 }
+
