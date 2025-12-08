@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Cross-References</title>
-    <link href="stylesheets/desktop.css" rel="stylesheet" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="stylesheets/stylesheet.css" rel="stylesheet" />
+    <link href="stylesheets/desktop.css" rel="stylesheet" media="only screen and (min-width:1200px)"/>
+    <link href="stylesheets/tablet.css" rel="stylesheet" media="only screen and (min-width:481px) and (max-width:1199px)"/>
+    <link href="stylesheets/mobile.css" rel="stylesheet" media="only screen and (max-width:480px)"/>
 </head>
 <body>
 <script src="scripts/headerMenu.js"></script>
@@ -27,7 +30,7 @@
             <dt>Responsive design</dt>
             <dd>Separate stylesheets for desktop, table, and mobile devices.</dd>
             <dt>Generated content</dt>
-            <dd>The header menu of each page is dynamically generated with javascript.
+            <dd>The header menu of each page is generated with javascript via DOM manipulation.
         </dl>
         <ul>
             <li>Layouts:</li>
