@@ -1,81 +1,26 @@
 @charset "utf-8";
-body {
-    width: 95%;
-    margin: auto;
-    background-color: hsl(50, 90%, 75%); /*hsl(40, 50%, 50%);*/
-}
-
-header {
-    height: 80px;
-    /*outline: 1px solid green;*/
-    align-content: center;
-    margin: 0;
-    font-size: 1.4em;
-    /*background: radial-gradient(ellipse at top,  firebrick 15%, hsl(50, 90%, 75%));*/
-}
-
-/* NAV */
-header > nav {
-    /*outline:1px solid red;*/
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    color: firebrick;
-    /*background-color: indianred;*/
-}
-
-header > nav a {
-    flex: 0 1 auto;
-    /*outline: 1px solid red;*/
-    align-content: center;
-    padding: 10px;
-    margin: 0 10px;
-    text-decoration: none;
-}
-
-div.dropdown {
-}
-
-header nav a:first-child {
-    position:absolute;
-    left: 3%
-}
-
-header nav span:last-child {
-    position:absolute;
-    right: 3%
-}
-
-:link, :visited{
-    color: inherit;
-    &.dropdown:after {
-        content: " \25B6";
-        font-size: 0.7em;
-    }
-}
-
-a:hover {
-    background-color: red;/*hsl(0, 70%, 50%);*/
-    border-radius: 10px;
-    color: black;
-    box-shadow: inset 0 3px 10px 0 hsl(0, 70%, 45%), inset 0 -3px 10px 0 hsl(0, 70%, 45%);
-    &.dropdown:after {
-        content: "\25BC";
-        font-size: 0.7em;
-    }
-}
 
 
-
-h1 {
-    text-align: center;
-    line-height: 3em;
-    background-color: firebrick;
-    color: hsl(50, 90%, 75%);
-}
 
 /* HOME PAGE */
-body#home {
+/*body#home {*/
+/*    display: grid;*/
+/*}*/
+
+#coach_grid {
     display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(500px, 1fr));
+    gap: 5rem;
+    margin:auto;
+    /*width: 100%;*/
+    /*outline: 1px solid red;*/
 }
+
+#coach_grid p {
+    font-size: 2em;
+    outline: 1px solid red;
+}
+
+
+
 

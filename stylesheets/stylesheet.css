@@ -1,14 +1,222 @@
 @charset "utf-8";
 
 html {
-    height: 100%;
 
+    height: 100%;
 }
 
 body {
+    /*max-width: 1920px;*/
     /*min-height:95%;*/
     width: 95%;
     margin: auto;
-    background-color: hsl(50, 90%, 75%); /*hsl(40, 50%, 50%);*/
+    background-color: hsl(50, 100%, 80%); /*hsl(40, 50%, 50%);*/
 }
+
+header {
+    /*height: 80px;*/
+    outline: 1px solid green;
+    /*align-content: center;*/
+    /*margin: 0;*/
+    font-size: 1.4em;
+    /*background: radial-gradient(ellipse at top,  firebrick 15%, hsl(50, 90%, 75%));*/
+}
+
+h1 {
+    text-align: center;
+    line-height: 3em;
+    background-color: firebrick;
+    color: hsl(50, 90%, 75%);
+}
+
+#coach_grid img{
+    width: 200px;
+    margin: 10px;
+    border: 1px solid green;
+    border-radius: 80px;
+    float: left;
+}
+
+#coach_grid div{
+    clear:left;
+    font-size: 1.2em;
+    text-align: center;
+    & h2 {
+        margin: auto;
+        color: Green;
+    }
+}
+
+
+/* HEADER MENU */
+header > span:before {
+    /*content: "hi";*/
+}
+
+header > nav {
+    display: flex;
+    flex-flow: column nowrap;
+    /*outline: 1px solid red;*/
+    justify-content: center;
+    color: firebrick;
+    /*display: none;*/
+}
+
+header img {
+    width: 100%;
+    /*margin: auto;*/
+    /*outline: 1px solid red;*/
+}
+
+
+
+header > nav div {
+    flex: 0 1 auto;
+    /*outline: 1px solid red;*/
+    align-content: center;
+    padding: 10px;
+    margin: 0 10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+header nav a {
+
+}
+
+header nav div {
+    & div {
+        display: none;
+    }
+
+    &.dropdown:after {
+    content: " \25B6";
+    font-size: 0.7em;
+    }
+    & a:link, :visited {
+        color: inherit;
+        text-decoration: none;
+    }
+
+}
+
+/* MENU HOVER EFFECTS*/
+header nav > div:hover {
+    background-color: red; /*hsl(0, 70%, 50%);*/
+    border-radius: 10px;
+    color: black;
+    box-shadow: inset 0 3px 10px 0 hsl(0, 70%, 45%), inset 0 -3px 10px 0 hsl(0, 70%, 45%);
+
+    /* SUBMENU HOVER EFFECTS*/
+    &.dropdown {
+        & div {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 10px;
+            background-color:yellow;
+            border-radius: 10px;
+            /*justify-content: center;*/
+            align-items: center;
+
+            & a {
+                width: 100%;
+                /*margin: 0 10px;*/
+                padding: 10px;
+                text-align: left;
+            }
+        }
+
+        & a:hover {
+            background-color: red;
+        }
+        &:after {
+            content: "\25BC";
+            font-size: 0.7em;
+        }
+    }
+}
+
+/* HEADER SUBMENU */
+#submenu_services {
+    display:none;
+}
+
+
+
+
+
+/* HEADER MENU > 1200PX */
+@media (min-width: 1200px) {
+    body {
+        /*position: relative;*/
+    }
+
+    header {
+        display:grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        /*height: 80px;*/
+        /*text-align: right;*/
+    }
+
+    header > nav {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        /*background-color: indianred;*/
+    }
+
+    header > span {
+        margin-left: auto;
+    }
+
+    header > a {
+        margin-right: auto;
+        vertical-align: center;
+    }
+
+    header img {
+        max-width:300px;
+        /*margin-right: auto;*/
+        /*position:absolute;*/
+        /*left:0;*/
+    }
+
+
+    header nav a:first-child {
+        /*position: absolute;*/
+        /*left: 3%;*/
+        /*max-width: 100px;*/
+        /*width: 10%;*/
+        /*max-width: 500px;*/
+        /*margin-right: 10%;*/
+        /*flex: 0 1 auto;*/
+        /*outline: 1px solid red;*/
+    }
+
+    header nav span:last-child {
+        /*position: absolute;*/
+        /*right: 3%*/
+    }
+
+    /*#submenu_services {*/
+    /*    display: flex;*/
+    /*    flex-flow: column nowrap;*/
+    /*}*/
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

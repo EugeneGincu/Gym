@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="stylesheets/stylesheet.css" rel="stylesheet" />
     <link href="stylesheets/desktop.css" rel="stylesheet" media="only screen and (min-width:1200px)"/>
-    <link href="stylesheets/tablet.css" rel="stylesheet" media="only screen and (min-width:481px) and (max-width:1199px)"/>
-    <link href="stylesheets/mobile.css" rel="stylesheet" media="only screen and (max-width:480px)"/>
+    <script src="scripts/headerMenu.js" defer></script>
+
 </head>
 <body>
-<script src="scripts/headerMenu.js"></script>
+<header>
+    <a href="index.html"><img src="images/Logo.png" alt='Logo'/></a>
+</header>
 <!--    <header>-->
 <!--        <nav>-->
 <!--            <a href="index.html">Logo</a>-->
@@ -27,16 +29,16 @@
     <h1>Cross-References - multicolumn</h1>
     <section>
         <dl>
-            <dt>Responsive design</dt>
-            <dd>Separate stylesheets for desktop, table, and mobile devices.</dd>
+            <dt>Mobile-first responsive design</dt>
+            <dd>A base stylesheet that carries common styles for all devices and a desktop stylesheet that adds layouts.</dd>
             <dt>Generated content</dt>
             <dd>The header menu of each page is generated with javascript via DOM manipulation.
         </dl>
         <ul>
             <li>Layouts:</li>
-            <li>Grid - Home, Membership</li>
-            <li>Flexbox - Classes, Locations</li>
-            <li>Float - Facility, Coaching</li>
+            <li>Grid - Coaching, Membership</li>
+            <li>Flexbox - Home, Classes </li>
+            <li>Float - Facility, Locations</li>
             <li>Multicolumn - Cross-References</li>
         </ul>
     </section>
