@@ -15,7 +15,7 @@ body {
 
 header {
     /*height: 80px;*/
-    outline: 1px solid green;
+    /*outline: 1px solid green;*/
     /*align-content: center;*/
     /*margin: 0;*/
     font-size: 1.4em;
@@ -68,9 +68,7 @@ header img {
     /*outline: 1px solid red;*/
 }
 
-
-
-header > nav div {
+header nav div {
     flex: 0 1 auto;
     /*outline: 1px solid red;*/
     align-content: center;
@@ -78,20 +76,18 @@ header > nav div {
     margin: 0 10px;
     text-decoration: none;
     text-align: center;
-}
-
-header nav a {
-
-}
-
-header nav div {
+    position: relative;
+    /*border: 2px solid transparent;*/
     & div {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: -10px;
     }
 
-    &.dropdown:after {
-    content: " \25B6";
-    font-size: 0.7em;
+    &.dropdown::after {
+        content: " \25B6";
+        font-size: 0.7em;
     }
     & a:link, :visited {
         color: inherit;
@@ -113,25 +109,33 @@ header nav > div:hover {
             display: flex;
             flex-flow: column nowrap;
             gap: 10px;
-            background-color:yellow;
+
+            /*background: transparent;*/
+            background-color: hsl(50, 100%, 80%);
+            /*outline:1px solid firebrick;*/
+            box-shadow:inset 0 0 5px firebrick;
             border-radius: 10px;
             /*justify-content: center;*/
             align-items: center;
 
             & a {
-                width: 100%;
+                width: 85%;
                 /*margin: 0 10px;*/
                 padding: 10px;
                 text-align: left;
+                color: firebrick;
+                border-radius: 10px;
             }
         }
 
         & a:hover {
             background-color: red;
+            color: black;
         }
-        &:after {
+        &::after {
             content: "\25BC";
             font-size: 0.7em;
+            border: 1px solid transparent;
         }
     }
 }

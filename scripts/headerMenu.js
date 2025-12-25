@@ -52,7 +52,7 @@ menu.forEach( value => {
     a.textContent = value;
     div.appendChild(a);
     nav.appendChild(div);
-    a.setAttribute('position', 'relative');
+    // div.setAttribute('position', 'relative');
 });
 
 let span = document.createElement('span');
@@ -62,7 +62,7 @@ header.appendChild(span);
 //Header Sub-Menu
 let subMenu = new Map(
     [
-        ['Contact', ['Location', 'About']],
+        ['Contact', ['Locations', 'About']],
         ['Services', ['Classes', 'Schedule', 'Tools']]
     ]
 )
@@ -80,7 +80,7 @@ subMenu.forEach((value, key) => {
                 submenu_link.setAttribute('href', links.get(submenu_item));
                 submenu_div.appendChild(submenu_link);
             }
-            submenu_div.style.position = 'absolute';
+            // submenu_div.style.position = 'absolute';
             // submenu_div.style.display = 'none';
 
         }
