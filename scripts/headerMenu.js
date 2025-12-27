@@ -21,19 +21,10 @@ let links = new Map(
         ['Services', 'services.html']
     ]
 )
-// let menu = new Map(
-//     [
-//         // ['Logo', 'index.html'],
-//         ['Classes', 'classes.html'],
-//         ['Membership', 'membership.html'],
-//         ['Facility', 'facility.html'],
-//         ['Coaching', 'coaching.html'],
-//         ['Contact', 'contact.html'],
-//         ['Cross-Reference', 'cross-reference.html']
-//     ]
-// );
 
 let menu = ['Services','Membership','Facility','Coaching','Contact','Cross-Reference'];
+const savedLocation = localStorage.getItem('selectedLocation');
+let selected_location = savedLocation || "Select location";
 
 let header = document.querySelector('body > header');
 let nav = document.createElement('nav');
@@ -55,9 +46,7 @@ menu.forEach( value => {
     // div.setAttribute('position', 'relative');
 });
 
-let span = document.createElement('span');
-span.textContent = "Select location";
-header.appendChild(span);
+
 
 //Header Sub-Menu
 let subMenu = new Map(
@@ -84,6 +73,43 @@ subMenu.forEach((value, key) => {
             // submenu_div.style.display = 'none';
 
         }
+    }
+})
+
+//Header "Select Location" Menu
+let location_div = document.createElement('div');
+let location_submenu_div = document.createElement('div');
+
+location_div.setAttribute('id', 'location_menu');
+location_div.innerHTML = "<a href='' onclick='return false'>" + selected_location + "</a>";
+header.appendChild(location_div);
+location_div.appendChild(location_submenu_div);
+
+let locations = ["Location A", "Location B", "Location C", "Location D"];
+
+locations.forEach(val => {
+    let a = document.createElement('a');
+    a.dataset.location = val;
+    a.textContent = val;
+    a.href="";
+    a.addEventListener('click', e => e.preventDefault());
+    location_submenu_div.appendChild(a);
+})
+
+location_div.firstChild.addEventListener('click', () => {
+    location_submenu_div.classList.toggle('location_submenu_toggle');
+
+})
+
+location_submenu_div.addEventListener('click', event => {
+    if (event.target.tagName === 'A') {
+        console.log(event.target.dataset.location);
+        console.log(location_div.querySelector('A').textContent);
+        selected_location = event.target.dataset.location;
+        location_div.querySelector('A').textContent = event.target.dataset.location;
+
+        localStorage.setItem('selectedLocation', selected_location);
+        location_submenu_div.classList.toggle('location_submenu_toggle');
     }
 })
 
