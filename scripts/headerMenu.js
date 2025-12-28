@@ -16,13 +16,13 @@ let links = new Map(
         ['Cross-Reference', 'cross-reference.html'],
         ['Locations', 'locations.html'],
         ['Schedule', 'schedule.html'],
-        ['About', 'about.html'],
+        ['About', ''],
         ['Tools', 'tools.html'],
-        ['Services', 'services.html']
+        ['Services', '']
     ]
 )
 
-let menu = ['Services','Membership','Facility','Coaching','Contact','Cross-Reference'];
+let menu = ['Services','Membership','Facility','Coaching','About','Cross-Reference'];
 const savedLocation = localStorage.getItem('selectedLocation');
 let selected_location = savedLocation || "Select location";
 
@@ -51,15 +51,16 @@ menu.forEach( value => {
 //Header Sub-Menu
 let subMenu = new Map(
     [
-        ['Contact', ['Locations', 'About']],
+        ['About', ['Contact', 'Locations']],
         ['Services', ['Classes', 'Schedule', 'Tools']]
     ]
 )
 
 subMenu.forEach((value, key) => {
     for (let menu_div of nav.children) {
-        console.log(menu_div.firstChild.textContent);
+        // console.log(menu_div.firstChild.textContent);
         if (menu_div.firstChild.textContent === key) {
+            menu_div.firstChild.addEventListener('click', e => e.preventDefault());
             let submenu_div = document.createElement('div');
             menu_div.appendChild(submenu_div);
             menu_div.classList.add('dropdown');
@@ -75,8 +76,9 @@ subMenu.forEach((value, key) => {
         }
     }
 })
-
+//**************************************************************************************
 //Header "Select Location" Menu
+//**************************************************************************************
 let location_div = document.createElement('div');
 let location_submenu_div = document.createElement('div');
 
@@ -110,8 +112,12 @@ location_submenu_div.addEventListener('click', event => {
 
         localStorage.setItem('selectedLocation', selected_location);
         location_submenu_div.classList.toggle('location_submenu_toggle');
+
+        //Form location is in sync with the header menu location selection.
+        document.getElementById('form_location').value = selected_location;
     }
 })
+//********************************************************************************
 
 
 

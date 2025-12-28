@@ -10,7 +10,7 @@ body {
     /*min-height:95%;*/
     width: 95%;
     margin: auto;
-    background-color: hsl(50, 100%, 80%); /*hsl(40, 50%, 50%);*/
+    /*background-color: hsl(50, 100%, 80%); hsl(40, 50%, 50%);*/
 }
 
 header {
@@ -83,6 +83,8 @@ header nav div {
         position: absolute;
         top: 100%;
         left: -10px;
+        z-index:999;
+        background-color:white;
     }
 
     &.dropdown::after {
@@ -131,7 +133,7 @@ header nav div {
                 gap: 10px;
 
                 /*background: transparent;*/
-                background-color: hsl(50, 100%, 80%);
+                /*background-color: hsl(50, 100%, 80%);*/
                 /*outline:1px solid firebrick;*/
                 box-shadow:inset 0 0 5px firebrick;
                 border-radius: 10px;
@@ -168,21 +170,21 @@ header nav div {
         /*background-color: indianred;*/
     }
 
+    /* LOCATION SELECTOR */
     header > div {
         margin-left: auto;
         position: relative;
         padding: 2px;
         & > div {
             display: none;
-
-
         }
         /*& a {*/
         /*    display: none;*/
         /*    !*position: absolute;*!*/
         /*}*/
 
-        &:hover a {
+        & a {
+            background-color: white;
             /*display: inherit;*/
         }
     }
@@ -222,6 +224,42 @@ header nav div {
         /*outline: 1px solid red;*/
     }
 
+}
+
+/* FORM */
+form, fieldset {
+    display: flex;
+    flex-flow: column wrap;
+    /*justify-content: center;*/
+    align-content: center;
+    /*align-items: center;*/
+    gap: 20px;
+}
+
+
+/* MEMBERSHIP CARDS */
+main#membership {
+    display: grid;
+    outline: 1px solid red;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 500px));
+    /*grid-template-rows: repeat(2, minmax(1fr, 300px));*/
+    gap: 80px;
+    justify-content: center;
+    /*align-items: center;*/
+
+    & div {
+        /*margin: auto;*/
+        text-align: justify;
+        min-width: 100px;
+        max-width: 700px;
+        border:2px solid red;
+        border-radius: 20px;
+        background-color: hsl(50, 100%, 80%);
+
+        & h2 {
+            text-align:center;
+        }
+    }
 }
 
 
