@@ -23,6 +23,8 @@ let links = new Map(
 )
 
 let menu = ['Services','Membership','Facility','Coaching','About','Cross-Reference'];
+
+
 //Header Sub-Menu
 let subMenu = new Map(
     [
@@ -30,9 +32,6 @@ let subMenu = new Map(
         ['Services', ['Classes', 'Schedule', 'Tools']]
     ]
 )
-
-const savedLocation = localStorage.getItem('selectedLocation');
-let selected_location = savedLocation || "Select location";
 
 let header = document.querySelector('body > header');
 let nav = document.createElement('nav');
@@ -96,47 +95,6 @@ window.addEventListener('resize', () => {
     })
 });
 
-
-    // let submenu = subMenu.get(event.target.firstChild.textContent);
-
-
-
-    // switch (event.target.tagName){
-    //     case "A":
-    //         if (event.target.nextSibling.classList.contains('submenu'))
-    //             mobile_submenu = event.target.nextSibling;
-    //         else
-    //             mobile_submenu = menu_div.nextSibling;
-    //         break;
-    //     case "DIV":
-    //         if (event.target.nextSibling.classList.contains('submenu'))
-    //             mobile_submenu = event.target.nextSibling;
-    //         else
-    //             mobile_submenu = event.target.querySelector('div.submenu');
-    //         break;
-    //     default:
-    //         break;
-    // }
-
-    // console.log(menu_div);
-    // console.log(mobile_submenu);
-
-    // if (mobile_submenu?.classList.contains('mobile_submenu_show')){
-    //     //Hide submenu
-    //     // menu_div.firstChild.insertAdjacentElement('afterend', mobile_submenu);
-    //     console.log("hiding menu");
-    // } else if (!mobile_submenu?.classList.contains('mobile_submenu_show')) {
-    //     //Show submenu
-    //     console.log("showing menu");
-    //     // mobile_submenu?.insertAdjacentElement('afterend', mobile_submenu);
-    // }
-
-
-
-
-
-
-
 //Create hidden submenus for each header menu that has a dropdown submenu.
 subMenu.forEach((value, key) => {
     for (let menu_div of nav.children) {
@@ -154,33 +112,17 @@ subMenu.forEach((value, key) => {
                 submenu_link.setAttribute('href', links.get(submenu_item));
                 submenu_div.appendChild(submenu_link);
             }
-            // menu_div.firstChild.addEventListener('click', e => {
-            //     e.preventDefault();
-            //     let mobile_submenu = menu_div.querySelector('div') ?? nav.querySelector('.mobile_submenu_toggle');
-            //
-            //     if (window.getComputedStyle(nav).flexFlow === "row nowrap")
-            //         return;
-            //
-            //     submenu_div.classList.toggle('mobile_submenu_toggle');
-            //     if (mobile_submenu.classList.contains('mobile_submenu_toggle')){
-            //         menu_div.insertAdjacentElement('afterend', submenu_div);
-            //     } else if (!mobile_submenu.classList.contains('mobile_submenu_toggle')) {
-            //         console.log(menu_div.firstChild.tagName);
-            //         menu_div.firstChild.insertAdjacentElement('afterend', submenu_div);
-            //     }
-            //
-            //
-            //     // console.log(menu_div.querySelector('div').nodeName);
-            // });
-            // submenu_div.style.position = 'absolute';
-            // submenu_div.style.display = 'none';
-
         }
     }
 })
+
+
 //**************************************************************************************
 //Header "Select Location" Menu
 //**************************************************************************************
+const savedLocation = localStorage.getItem('selectedLocation');
+let selected_location = savedLocation || "Select location";
+
 let location_div = document.createElement('div');
 let location_submenu_div = document.createElement('div');
 
