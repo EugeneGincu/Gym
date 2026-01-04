@@ -87,16 +87,34 @@ header nav div {
         background-color:white;
     }
 
-    &.dropdown::after {
+    &.dropdown > a::after {
         content: " \25B6";
         font-size: 0.7em;
     }
+
     & a:link, :visited {
         color: inherit;
         text-decoration: none;
     }
 
+    &.dropdown:has(> div.mobile_submenu_show) > a::after {
+        content: " \25BC";
+        font-size: 0.7em;
+    }
+
+
 }
+
+.mobile_submenu_show {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5px;
+    position: static;
+}
+
+/*.submenu {*/
+/*    display: none;*/
+/*}*/
 
 
 
@@ -124,6 +142,17 @@ header nav div {
         border-radius: 10px;
         color: black;
         box-shadow: inset 0 3px 10px 0 hsl(0, 70%, 45%), inset 0 -3px 10px 0 hsl(0, 70%, 45%);
+
+        /*TEST-SUBMENU*/
+        /*& + .submenu {*/
+        /*    display: flex;*/
+        /*    flex-flow: column nowrap;*/
+        /*    position: absolute;*/
+        /*    !*top: 0;*!*/
+        /*    left: 5%;*/
+        /*    z-index:999;*/
+        /*    background-color:white;*/
+        /*}*/
 
         /* SUBMENU HOVER EFFECTS*/
         &.dropdown {
@@ -154,7 +183,7 @@ header nav div {
                 background-color: red;
                 color: black;
             }
-            &::after {
+            & > a::after {
                 content: "\25BC";
                 font-size: 0.7em;
                 border: 1px solid transparent;
@@ -193,9 +222,6 @@ header nav div {
         display: flex;
         flex-flow: column nowrap;
         position: absolute;
-        & a {
-            color:green;
-        }
     }
 
 
