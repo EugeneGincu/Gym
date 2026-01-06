@@ -16,9 +16,9 @@ let links = new Map(
         ['Cross-Reference', 'cross-reference.html'],
         ['Locations', 'locations.html'],
         ['Schedule', 'schedule.html'],
-        ['About', ''],
+        ['About', null],
         ['Tools', 'tools.html'],
-        ['Services', '']
+        ['Services', null]
     ]
 )
 
@@ -55,6 +55,12 @@ menu.forEach( value => {
 document.addEventListener('click', event => {
     event.preventDefault();
 
+    let link = event.target.getAttribute('href') ?? event.target.firstElementChild.getAttribute('href') ?? '';
+    if (links.values().toArray().includes(link)) {
+        // console.log(links.values().toArray());
+        // console.log("link is " + link);
+        window.location.href = link;
+    }
     //Header menu open/close
     if (window.getComputedStyle(nav).flexFlow === "column nowrap" &&
         (event.target.classList.contains('dropdown') || event.target.classList.contains('dropdown_title'))){

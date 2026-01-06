@@ -118,9 +118,11 @@ header nav div {
     clear:left;
     font-size: 1.2em;
     text-align: center;
+    border:2px dashed green;
+    border-radius: 20px;
     & h2 {
         margin: auto;
-        color: Green;
+        color: green;
     }
 }
 
