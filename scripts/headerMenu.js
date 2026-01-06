@@ -126,7 +126,7 @@ location_div.innerHTML = "<a href='' onclick='return false'>" + selected_locatio
 header.appendChild(location_div);
 location_div.appendChild(location_submenu_div);
 
-let locations = ["Location A", "Location B", "Location C", "Location D"];
+let locations = ["Calgary", "Vancouver", "Toronto", "Halifax"];
 
 locations.forEach(val => {
     let a = document.createElement('a');

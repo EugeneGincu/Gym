@@ -15,19 +15,20 @@
     <h2>Image banner with name of gym</h2>
     <h1>Contact</h1>
     <h2>Form with dropdown to contact trainer, nutritionist, book class, for the selected gym in upper right corner</h2>
-    <form>
+    <h2>Create form validatioin for email and phone number</h2>
+    <form id="contact_form">
         <fieldset name="meta">
             <label>Location
             <select id="form_location">
-                <option value="Location A">Location A</option>
-                <option value="Location B">Location B</option>
-                <option value="Location C">Location C</option>
-                <option value="Location D">Location D</option>
+                <option value="Calgary">Calgary</option>
+                <option value="Vancouver">Vancouver</option>
+                <option value="Toronto">Toronto</option>
+                <option value="Halifax">Halifax</option>
             </select>
             </label>
             <label>Service
                 <select id="form_service">
-                    <option value="class">Class</option>
+                    <option value="general">General Inquiry</option>
                     <option value="personal_coaching">Personal Coaching</option>
                     <option value="membership">Membership</option>
                     <option value="booking">Booking</option>
@@ -44,6 +45,30 @@
             </label>
             <label>Phone:
                 <input type='text'/>
+            </label>
+            <label id="membership_selector" hidden>Membership Tier:
+                <select id="membership_tier">
+                    <option value="platinum">Platinum</option>
+                    <option value="gold">Gold</option>
+                    <option value="silver">Silver</option>
+                </select>
+            </label>
+            <label id="coaching_selector" hidden>Coaching:
+                <select id="coaching">
+                    <option value="strength">Strength</option>
+                    <option value="cardio">Cardio</option>
+                    <option value="weight_loss">Weight Loss</option>
+                    <option value="nutritionist">Nutritionist</option>
+                    <option value="stretching">Stretching</option>
+                </select>
+            </label>
+            <label id="booking_selector" hidden>Book class/room:
+                <select id="booking">
+                    <option value="cycling">Cycling class</option>
+                    <option value="fitness">Fitness class</option>
+                    <option value="stretching">Stretching class</option>
+                    <option value="room">Hosting room</option>
+                </select>
             </label>
             <label>Message:
                 <textarea cols="30"></textarea>

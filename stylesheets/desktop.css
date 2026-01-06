@@ -26,6 +26,29 @@ form {
     max-width: 600px;
 }
 
+/* LOCATIONS */
+section#locations {
+    & div {
+        clear: both;
+        /*margin:auto;*/
+        /*height:200px;*/
+    }
+
+    & img.location_left {
+        float: left;
+        width: 400px;
+    }
+
+    & img.location_right {
+        float: right;
+        width: 400px;
+    }
+
+    & blockquote {
+        padding-top: 60px;
+    }
+}
+
 
 
 
