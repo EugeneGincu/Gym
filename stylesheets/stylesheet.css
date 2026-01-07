@@ -132,8 +132,16 @@ header > div {
     text-align:right;
     position: relative;
     padding: 2px;
+
+    &::before {
+        content: "Your location:";
+        color: green;
+    }
+
     & > div {
         display: none;
+
+
     }
     /*& a {*/
     /*    display: none;*/
@@ -276,6 +284,16 @@ form, fieldset {
     align-content: center;
     /*align-items: center;*/
     gap: 20px;
+}
+
+label {
+    width: 100%;
+    /*outline: 1px solid red;*/
+}
+
+input, select {
+    width: 80%;
+    /*outline: 1px solid green;*/
 }
 
 

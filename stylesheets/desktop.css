@@ -26,25 +26,39 @@ form {
     max-width: 600px;
 }
 
+/* CLASSES */
+section#classes {
+    & img {
+        width:500px;
+    }
+}
+
 /* LOCATIONS */
-section#locations {
+section.float {
     & div {
         clear: both;
+        margin: 20px 0;
         /*margin:auto;*/
         /*height:200px;*/
     }
 
-    & img.location_left {
-        float: left;
+    & img {
         width: 400px;
+        margin: 20px;
     }
 
-    & img.location_right {
+    & .location_left {
+        float: left;
+    }
+
+    & .location_right {
         float: right;
-        width: 400px;
     }
 
     & blockquote {
+        margin: auto;
+        width:600px;
+        align-content: space-evenly;
         padding-top: 60px;
     }
 }

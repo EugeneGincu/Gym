@@ -146,10 +146,12 @@ location_submenu_div.addEventListener('click', event => {
         location_submenu_div.classList.toggle('location_submenu_show');
 
         //Form location is in sync with the header menu location selection.
-        document.getElementById('form_location').value = selected_location;
+        if (document.getElementById('form_location'))
+            document.getElementById('form_location').value = selected_location;
+
+        if (typeof coachingLocation === 'function')
+            coachingLocation(selected_location);
     }
 })
 //********************************************************************************
-
-
 
