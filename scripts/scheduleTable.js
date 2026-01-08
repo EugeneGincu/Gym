@@ -1,11 +1,14 @@
 "use strict"
-window.onload = populateTable;
+//Using currying to pass the user's location to the populateTable function instead of a default Event object
+window.onload = populateTable.bind(null, selected_location);
 
 
-function populateTable() {
+function populateTable(location) {
     let table = document.getElementById('schedule');
-    // let body = table.body;
-    // console.log("Body" + body);
+    table.tBodies[0].remove();
+    table.createTBody();
+    table.caption.textContent = location;
+
     let date = new Date();
     date.setHours(3);
     date.getDay();
@@ -23,7 +26,7 @@ function populateTable() {
     for (let i = 0; i < 31; i++) {
     let cell = document.createElement('td');
     row.appendChild(cell);
-    cell.textContent = daySchedule(date.getDay());//date.getDate() + "/" + (date.getMonth()+1) + "/Day: " + date.getDay();
+    cell.textContent = daySchedule(date.getDay(), location);//date.getDate() + "/" + (date.getMonth()+1) + "/Day: " + date.getDay();
 
     if (date.getDay() === 6) {
         table.tBodies[0].appendChild(row);
@@ -35,16 +38,48 @@ function populateTable() {
 }
 
 //Returns a string that represents the classes that take place on the input day.
-function daySchedule(day) {
+function daySchedule(day, location) {
     let schedule = "";
 
-    if (day === 0 || day === 3) {
-        schedule += "Spin Class";
-    } else if (day === 1 || day === 4) {
-        schedule += "Stretching Class";
-    } else if (day === 2 || day === 5) {
-        schedule += "Fitness Class"
+    switch (location) {
+        case 'Calgary':
+            if (day === 0 || day === 3) {
+                schedule += "Spin Class";
+            } else if (day === 1 || day === 4) {
+                schedule += "Stretching Class";
+            } else if (day === 2 || day === 5) {
+                schedule += "Fitness Class"
+            }
+            break;
+        case 'Vancouver':
+            if (day === 1 || day === 4) {
+                schedule += "Spin Class";
+            } else if (day === 3 || day === 6) {
+                schedule += "Stretching Class";
+            } else if (day === 0  || day === 3) {
+                schedule += "Fitness Class"
+            }
+            break;
+        case 'Toronto':
+            if (day === 1 || day === 2) {
+                schedule += "Spin Class";
+            } else if (day === 3 || day === 4) {
+                schedule += "Stretching Class";
+            } else if (day === 0 || day === 6) {
+                schedule += "Fitness Class"
+            }
+            break;
+        case 'Halifax':
+            if (day === 3 || day === 4) {
+                schedule += "Spin Class";
+            } else if (day === 0 || day === 6) {
+                schedule += "Stretching Class";
+            } else if (day === 1 || day === 2) {
+                schedule += "Fitness Class"
+            }
+            break;
+        default:
+            break;
     }
-
     return schedule;
 }

@@ -113,10 +113,10 @@ subMenu.forEach((value, key) => {
 
 
 //**************************************************************************************
-//Header "Select Location" Menu
+//Header "Your Location" Menu
 //**************************************************************************************
 const savedLocation = localStorage.getItem('selectedLocation');
-let selected_location = savedLocation || "Select location";
+let selected_location = savedLocation || "Calgary";
 
 let location_div = document.createElement('div');
 let location_submenu_div = document.createElement('div');
@@ -151,6 +151,9 @@ location_submenu_div.addEventListener('click', event => {
 
         if (typeof coachingLocation === 'function')
             coachingLocation(selected_location);
+
+        if (typeof populateTable === 'function')
+            populateTable(selected_location);
     }
 })
 //********************************************************************************
