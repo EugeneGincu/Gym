@@ -2,11 +2,11 @@
 
 
 let location_temp = document.getElementById('location_menu').firstElementChild.textContent;
-let current_city = document.createElement('h2');
+let current_city = document.createElement('h1');
 current_city.textContent = "Coaches in " + location_temp;
 document.getElementById('coach_grid')
     .insertAdjacentElement("beforebegin", current_city);
-// coachingLocation(current_location);
+coachingLocation(location_temp);
 
 function coachingLocation(location) {
     let divs = document.getElementById('coach_grid');
