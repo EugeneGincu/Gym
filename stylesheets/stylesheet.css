@@ -394,6 +394,12 @@ nav#calculators {
     }
 }
 
+/* FACILITY */
+main#facility {
+    & img {
+        width: 100%
+    }
+}
 
 
 

@@ -63,7 +63,17 @@ section.float {
     }
 }
 
+/* FACILITY */
+main#facility {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 30px;
 
+    & > div {
+        flex: 0 1 700px;
+        /*outline: 1px solid red;*/
+    }
+}
 
 
 
