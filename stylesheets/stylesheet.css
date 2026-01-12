@@ -163,7 +163,7 @@ header > div {
 
 
 /****************************************************************/
-                /* HEADER MENU > 1200PX */
+/* HEADER MENU > 1200PX */
 /****************************************************************/
 @media (min-width: 1200px) {
     body {
@@ -276,8 +276,8 @@ header > div {
     }
 }
 
-/* FORM */
-form, fieldset {
+/* CONTACT FORM */
+form#contact_form, fieldset.contact {
     display: flex;
     flex-flow: column wrap;
     /*justify-content: center;*/
@@ -322,6 +322,77 @@ main#membership {
     }
 }
 
+/* SCHEDULE PAGE */
+nav#scheduleNav {
+    width: 300px;
+    /*display: inline;*/
+    border-right: 2px dashed red;
+    float:left;
+}
+
+table#schedule {
+    margin: 20px;
+    border-collapse: separate;
+    border-spacing: 2px;
+    display:inline-table;
+    background: linear-gradient(135deg, red, blue);
+    /*outline: 1px solid red;*/
+    caption-side: top;
+
+    & td {
+        /*border: 1px solid red;*/
+        width:100px;
+        height:100px;
+        position: relative;
+        background-color: white;
+
+        & i {
+            position: absolute;
+            bottom:0;
+            right:0;
+        }
+    }
+
+    & th {
+        background-color:  lightsteelblue;
+    }
+}
+
+/* CALCULATORS */
+nav#calculators {
+    /*display: inline-block;*/
+    width: 200px;
+
+    & a {
+        outline: 1px solid red;
+    }
+}
+
+/*fieldset.calculators {*/
+/*    display: flex;*/
+/*    flex-flow: column nowrap;*/
+/*}*/
+
+.calculators {
+    /*outline: 1px solid red;*/
+    /*width: 300px;*/
+
+    & div {
+        margin: 20px;
+    }
+
+    & input {
+        width: 50px;
+    }
+}
+
+#details {
+    & summary, ul {
+        list-style:none;
+        text-decoration: underline;
+        cursor:pointer;
+    }
+}
 
 
 

@@ -14,7 +14,7 @@ function populateTable(location) {
     date.getDay();
     let row = document.createElement('tr');
 
-    //Premake table cells for current week days that have passed
+    //Fill blank days this week so far
     if (date.getDay() > 0) {
         for (let i = 0; i < date.getDay(); i++) {
             let cell = document.createElement('td');
@@ -22,11 +22,11 @@ function populateTable(location) {
         }
     }
 
-    //Creates 30 cells and appends them to a new table row each Sunday
+    //Creates 30 cells and appends them to the table by creating a new row for each week
     for (let i = 0; i < 31; i++) {
     let cell = document.createElement('td');
     row.appendChild(cell);
-    cell.textContent = daySchedule(date.getDay(), location);//date.getDate() + "/" + (date.getMonth()+1) + "/Day: " + date.getDay();
+    cell.innerHTML = daySchedule(date.getDay(), location) + "<i>" + date.getDate() + "/" + (date.getMonth()+1) + "</i>"//"/Day: " + date.getDay();
 
     if (date.getDay() === 6) {
         table.tBodies[0].appendChild(row);

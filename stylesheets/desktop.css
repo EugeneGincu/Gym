@@ -63,34 +63,7 @@ section.float {
     }
 }
 
-/* SCHEDULE PAGE */
-nav#scheduleNav {
-    width: 300px;
-    /*display: inline;*/
-    border-right: 2px dashed red;
-    float:left;
-}
 
-table#schedule {
-    margin: 20px;
-    border-collapse: separate;
-    /*border-spacing: 5px;*/
-    display:inline-table;
-    /*background-color: blue;*/
-    outline: 1px solid red;
-    caption-side: top;
-
-    & td {
-        border: 1px solid red;
-        width:100px;
-        height:100px;
-        /*background-color: green;*/
-    }
-
-    & th {
-        background-color: green;
-    }
-}
 
 
 

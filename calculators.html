@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="stylesheets/stylesheet.css" rel="stylesheet" />
+    <link href="stylesheets/desktop.css" rel="stylesheet" media="only screen and (min-width:740px)"/>
+    <script src="scripts/headerMenu.js" defer></script>
+    <script src="scripts/calculators.js" defer></script>
+</head>
+<body>
+<header>
+    <a href="index.html"><img src="images/Logo.png" alt='Logo'/></a>
+</header>
+<h1>Tools - JS</h1>
+<nav  id="calculators_list">
+    <h2>Calculators</h2>
+    <ul>
+        <li><a href onclick='return false;' id="show_body_comp">Body Composition</a></li>
+        <li><a href onclick='return false;' id="show_workout">Nutrition & Calories</a></li>
+    </ul>
+</nav>
+<main>
+    <form id="calculators">
+
+        <fieldset class="calculators" id="body_comp" hidden>
+            <legend>Body Composition Calculators</legend>
+            <p>Fill out the fields you need. Leave others blank. Click Calculate to see results for completed sections.</p>
+
+            <!-- Shared Basic Inputs -->
+            <div class="radio-group">
+                <label>Units:</label>
+                <label>
+                    <input type="radio" name="units_body" value="metric" id="metric_body_comp" checked/>
+                    Metric (cm, kg)
+                </label>
+                <label>
+                    <input type="radio" name="units_body" value="imperial" id="imperial_body_comp"/>
+                    Imperial (ft, in, lbs)
+                </label>
+            </div>
+            <div>
+                <h3>Common measurements</h3>
+                <label>Height
+                    <input type='number' id='height_m_or_feet' placeholder='1' min='2' max='8' step='1'/> (m, feet)
+                    <input type='number' id='height' placeholder="170" min="0" max="250" step="1"/> (cm, in)
+                </label>
+            </div>
+            <div>
+
+                <label>Weight
+                    <input type='number' id='weight' placeholder="70" min="20" max="500" step="0.1"/>
+                    <!--                    <span class="unit" id="weight_unit">kg</span>-->
+                    (kg, lbs)
+                </label>
+            </div>
+            <div>
+                <label>Age
+                    <input type='number' id='age' placeholder="25" min="10" max="100"/>
+                </label>
+            </div>
+            <div class="radio-group">
+                <label>Gender:</label>
+                <label>
+                    <input type="radio" name='gender' value='male' id='male' checked/>Male
+                </label>
+                <label>
+                    <input type="radio" name='gender' value='female' id='female'/>Female
+                </label>
+            </div>
+
+
+
+
+            <!-- Body Fat Specific Inputs -->
+
+            <h3>Body Fat % Calculator (Optional)</h3>
+            <p class="help-text">Fill these out if you want body fat percentage calculated</p>
+            <div>
+                <label>Neck Circumference
+                    <input type='number' id='neck' placeholder="38" min="20" max="60" step="0.1"/>
+                    (cm, in)
+                </label>
+            </div>
+            <div>
+                <label>Waist Circumference
+                    <input type='number' id='waist' placeholder="85" min="40" max="200" step="0.1"/>
+                    (cm, in)
+                </label>
+            </div>
+            <div>
+                <label id="hip_label">Hip Circumference (females only)
+                    <input type='number' id='hip' placeholder="95" min="50" max="200" step="0.1"/>
+                    (cm, in)
+                </label>
+            </div>
+
+            <!-- Ideal Weight Specific Input -->
+            <h3>Ideal Weight Calculator (Optional)</h3>
+            <div class="radio-group">
+                <label>Frame Size:</label>
+                <label><input type="radio" name="frame_size" value="0.95" id="small_frame"/>Small</label>
+                <label><input type="radio" name="frame_size" value="1.0" id="medium_frame" checked/>Medium</label>
+                <label><input type="radio" name="frame_size" value="1.05" id="large_frame"/>Large</label>
+            </div>
+            <button type="button" id="calculate_body_comp">Calculate</button>
+        </fieldset>
+
+        <!--Results-->
+        <fieldset class="calculators" id="body_comp_results" hidden>
+            <legend>Body Composition Results</legend>
+            <div><label>BMI: <span id="bmi_result" class="result-section"></span></label></div>
+            <div><label>BMR: <span id="bmr_result" class="result-section" ></span></label></div>
+            <div><label>Body Fat %: <span id="body_fat_result" class="result-section" ></span></label></div>
+            <div><label>Ideal Weight: <span id="ideal_weight_result" class="result-section" ></span></label></div>
+        </fieldset>
+
+        <fieldset class="calculators" id="workout" hidden>
+            <legend>Workout Calculators</legend>
+            <p class="instructions">Fill out fields for the calculators you want to use. Leave others blank.</p>
+            <!-- Calorie Burn Inputs -->
+            <!-- Shared Units for Workout -->
+            <div class="radio-group">
+                <label>Units:</label>
+                <label><input type="radio" name="units_workout" value="metric" id="metric_workout" checked/>Metric (kg)</label>
+                <label><input type="radio" name="units_workout" value="imperial" id="imperial_workout"/>Imperial (lbs)</label>
+            </div>
+            <h3>Calorie Burn Calculator</h3>
+            <div>
+                <label>Activity  <input type='number' id='met_value' placeholder="8.0" min="1" max="20" step="0.1"/> MET Value</label>
+            </div>
+            <div>
+                <details>
+                    <summary>Common MET Values</summary>
+                    <ul class="met-list">
+                        <li>Walking (3 mph): 3.5</li>
+                        <li>Running (6 mph): 9.8</li>
+                        <li>Running (8 mph): 11.5</li>
+                        <li>Cycling (moderate): 8.0</li>
+                        <li>Swimming (moderate): 5.8</li>
+                        <li>HIIT: 8.0</li>
+                        <li>Weight Lifting: 5.0</li>
+                        <li>Yoga: 2.5</li>
+                        <li>Jump Rope: 12.3</li>
+                    </ul>
+                </details>
+            </div>
+            <div><label>Duration <input type='number' id='duration' placeholder="30" min="1" max="300"/> minutes</label></div>
+            <div><label>Your Weight <input type='number' id='weight_calburn' placeholder="70" min="20" max="300" step="0.1"/> (kg, lbs)</label></div>
+
+            <!-- One Rep Max Inputs -->
+
+            <h3>One Rep Max Calculator</h3>
+            <div><label>Weight Lifted <input type='number' id='weight_lifted' placeholder="100" min="1" max="500" step="0.5"/> (kg, lbs)</label></div>
+            <div><label>Reps Completed <input type='number' id='reps' placeholder="8" min="1" max="20"/></label>
+                <p class="help-text">Note: Results are less accurate above 12 reps</p>
+            </div>
+            <button type="button" id="calculate_workout">Calculate All Available</button>
+        </fieldset>
+
+        <fieldset class='calculators' id="workout_results" hidden>
+            <!-- Results Container -->
+            <legend>Workout Calculator Results</legend>
+            <div><label>Calorie burn: <span id="calorie_burn_result" class="result-section"></span></label></div>
+            <div><label>One Rep Max: <span id="one_rm_result" class="result-section"></span></label></div>
+
+        </fieldset>
+    </form>
+    <details id="details">
+        <summary>Common MET Values</summary>
+        <ul class="met-list">
+            <li><a href>Calgary</a></li>
+            <li><a href>Vancouver</a></li>
+            <li><a>Toronto</a></li>
+            <li><a>Halifax</a></li>
+
+        </ul>
+    </details>
+</main>
+</body>
+</html>

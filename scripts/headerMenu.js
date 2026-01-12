@@ -17,7 +17,7 @@ let links = new Map(
         ['Locations', 'locations.html'],
         ['Schedule', 'schedule.html'],
         ['About', null],
-        ['Tools', 'tools.html'],
+        ['Calculators', 'calculators.html'],
         ['Services', null]
     ]
 )
@@ -29,7 +29,7 @@ let menu = ['Services','Membership','Facility','Coaching','About','Cross-Referen
 let subMenu = new Map(
     [
         ['About', ['Contact', 'Locations']],
-        ['Services', ['Classes', 'Schedule', 'Tools']]
+        ['Services', ['Classes', 'Schedule', 'Calculators']]
     ]
 )
 
@@ -52,7 +52,7 @@ menu.forEach( value => {
 });
 
 //Clicking on header menu opens/closes submenu, clicking anywhere in document closes submenu.
-document.addEventListener('click', event => {
+header.addEventListener('click', event => {
     event.preventDefault();
 
     let link = event.target.getAttribute('href') ?? event.target.firstElementChild.getAttribute('href') ?? '';
