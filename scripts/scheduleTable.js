@@ -18,6 +18,7 @@ function populateTable(location) {
     if (date.getDay() > 0) {
         for (let i = 0; i < date.getDay(); i++) {
             let cell = document.createElement('td');
+            cell.classList.add('empty');
             row.appendChild(cell);
         }
     }

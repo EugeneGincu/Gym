@@ -1,3 +1,4 @@
+
 "use strict"
 
 let calculator_form = document.getElementById('calculators');
@@ -106,18 +107,16 @@ function workoutTraining() {
     }
 }
 
-
+//Submitting form calls appropriate calculator function
 calculator_form.addEventListener('click', event => {
     if (event.target === document.getElementById('calculate_body_comp'))
         bodyComposition();
-        // else if (event.target === document.getElementById('submit_nutrition_calories'))
-    // nutritionCalories();
     else if (event.target === document.getElementById('calculate_workout'))
         workoutTraining();
 });
 
 
-//Navigation list of calculators
+//Navigation list of calculators displays only the selected calculator
 calculators_list.addEventListener('click', event => {
     if (event.target === document.getElementById('show_body_comp')) {
         hideCalculators();
@@ -131,7 +130,7 @@ calculators_list.addEventListener('click', event => {
     }
 });
 
-//Resets results
+//Resets output results
 function resetResults() {
     bmi_result.textContent = "";
     bmr_result.textContent = "";

@@ -1,6 +1,4 @@
-//---------------------------------------------------------------
 //This script generates the main menu in the header of a webpage
-//---------------------------------------------------------------
 "use strict";
 
 
@@ -53,15 +51,19 @@ menu.forEach( value => {
 
 //Clicking on header menu opens/closes submenu, clicking anywhere in document closes submenu.
 header.addEventListener('click', event => {
+    //If click is on logo, the link is allowed to go through
+    if (event.target.closest('header > a')) return;
+
     event.preventDefault();
 
-    let link = event.target.getAttribute('href') ?? event.target.firstElementChild.getAttribute('href') ?? '';
-    if (links.values().toArray().includes(link)) {
-        // console.log(links.values().toArray());
-        // console.log("link is " + link);
-        window.location.href = link;
+    //If click is within the header navigation, follow the href of the non-dropdown link or a submenu link
+    if (event.target.closest('header > nav')) {
+        let link = event.target.getAttribute('href') ?? event.target.firstElementChild.getAttribute('href') ?? '';
+        if (links.values().toArray().includes(link))
+            window.location.href = link;
     }
-    //Header menu open/close
+
+    //Header mobile menu open/close
     if (window.getComputedStyle(nav).flexFlow === "column nowrap" &&
         (event.target.classList.contains('dropdown') || event.target.classList.contains('dropdown_title'))){
         let menu_div = event.target.tagName === "A"? event.target.parentNode : event.target;
@@ -82,6 +84,7 @@ header.addEventListener('click', event => {
         location_submenu_div.classList.remove('location_submenu_show');
 });
 
+//Support function that closes all mobile dropdowns
 function closeMobileDropdowns() {
     nav.querySelectorAll('div.submenu').forEach( div => {
         div.classList.remove('mobile_submenu_show');
@@ -117,7 +120,6 @@ subMenu.forEach((value, key) => {
 //**************************************************************************************
 const savedLocation = localStorage.getItem('selectedLocation');
 let selected_location = savedLocation || "Calgary";
-
 let location_div = document.createElement('div');
 let location_submenu_div = document.createElement('div');
 
@@ -128,6 +130,7 @@ location_div.appendChild(location_submenu_div);
 
 let locations = ["Calgary", "Vancouver", "Toronto", "Halifax"];
 
+//Set up each location link
 locations.forEach(val => {
     let a = document.createElement('a');
     a.dataset.location = val;
@@ -137,6 +140,7 @@ locations.forEach(val => {
     location_submenu_div.appendChild(a);
 })
 
+//Selecting a location also changes the coaches and class schedules for that city
 location_submenu_div.addEventListener('click', event => {
     if (event.target.tagName === 'A') {
         selected_location = event.target.dataset.location;

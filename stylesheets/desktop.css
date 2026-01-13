@@ -6,6 +6,22 @@
 /*body#home {*/
 /*    display: grid;*/
 /*}*/
+body {
+    background: linear-gradient(
+            hsla(50, 90%, 75%, 1) 5%,
+                /*rgba(255, 255, 255, 0.9) 25%,*/
+            /*rgba(255, 255, 255, 0.9) 98%,*/
+
+                hsla(50, 50%, 75%, 0.4) 15%,
+            hsla(50, 50%, 75%, 0.4) 99%
+            /*rgba(0, 0, 0, 1) 99.99%*/
+        /*rgba(255, 255, 255, 0.7)*/
+    ), url('../images/concrete.png') ;
+
+    width: 95%;
+    box-shadow: darkgray  0 0 10px 5px;
+}
+
 
 #coach_grid {
     display: grid;
@@ -70,9 +86,18 @@ main#facility {
     gap: 30px;
 
     & > div {
-        flex: 0 1 700px;
+        flex: 0 1 800px;
         /*outline: 1px solid red;*/
     }
+
+    & img {
+        width: 70%;
+    }
+}
+
+/* FOOTER */
+footer {
+    clear:both;
 }
 
 

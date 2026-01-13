@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', event => {
 });
 
 let form = document.querySelector('form#contact_form');
+
+//Show/hide available form inputs depending on the inquiry type
 form.addEventListener('change', event => {
     let form_service = form.querySelector('#form_service');
     if (event.target !== form_service) return;
