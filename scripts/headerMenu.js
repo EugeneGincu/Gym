@@ -63,6 +63,11 @@ header.addEventListener('click', event => {
             window.location.href = link;
     }
 
+    //Mobile menu hamburger click
+    if (event.target.closest('#mobile_menu')) {
+        nav.classList.toggle('mobile_nav_show');
+    }
+
     //Header mobile menu open/close
     if (window.getComputedStyle(nav).flexFlow === "column nowrap" &&
         (event.target.classList.contains('dropdown') || event.target.classList.contains('dropdown_title'))){
@@ -78,7 +83,8 @@ header.addEventListener('click', event => {
         closeMobileDropdowns();
 
     //Location submenu open/close
-    if (event.target === location_div.firstChild)
+    let location_link = document.getElementById('location_link');
+    if (event.target === location_link)
         location_submenu_div.classList.toggle('location_submenu_show');
     else
         location_submenu_div.classList.remove('location_submenu_show');
@@ -124,9 +130,17 @@ let location_div = document.createElement('div');
 let location_submenu_div = document.createElement('div');
 
 location_div.setAttribute('id', 'location_menu');
-location_div.innerHTML = "<a href='' onclick='return false'>" + selected_location + "</a>";
+location_div.innerHTML = "<a href='' id='location_link' onclick='return false'>" + selected_location + "</a>";
 header.appendChild(location_div);
 location_div.appendChild(location_submenu_div);
+
+//Mobile menu burger
+let span = document.createElement('span');
+let mobile_menu = document.createElement('span');
+span.appendChild(mobile_menu)
+mobile_menu.setAttribute('id', 'mobile_menu');
+mobile_menu.innerHTML = "<img src='images/mobile_menu.png' style='width:40px' alt='Mobile Menu'/>";
+location_div.insertAdjacentElement('afterbegin', span);
 
 let locations = ["Calgary", "Vancouver", "Toronto", "Halifax"];
 
