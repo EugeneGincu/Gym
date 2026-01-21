@@ -1,6 +1,6 @@
 "use strict"
 
-let location_temp = document.getElementById('location_menu').firstElementChild.textContent;
+let location_temp = document.getElementById('location_link').textContent;
 let current_city = document.createElement('h1');
 current_city.textContent = "Coaches in " + location_temp;
 document.getElementById('coach_grid').insertAdjacentElement("beforebegin", current_city);
@@ -26,7 +26,7 @@ function coachingLocation(location) {
             div.hidden = true;
         })
     });
-console.log('city is ' + cities.get(location));
+
     //Show only city that matches location selected by user.
     cities.get(location).forEach(div => {
         div.hidden = false;
