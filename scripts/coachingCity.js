@@ -26,7 +26,7 @@ function coachingLocation(location) {
             div.hidden = true;
         })
     });
-
+console.log('city is ' + cities.get(location));
     //Show only city that matches location selected by user.
     cities.get(location).forEach(div => {
         div.hidden = false;

@@ -7,7 +7,7 @@
 /*    display: grid;*/
 /*}*/
 body {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
     background-image: url('../images/concrete.png');
     background-blend-mode: overlay; /* Adjust to preference */
 
@@ -17,6 +17,11 @@ body {
 
 header {
     box-shadow: gray 0 5px 5px 0;
+}
+
+h1 {
+    color: firebrick;
+    background-color:unset;
 }
 
 

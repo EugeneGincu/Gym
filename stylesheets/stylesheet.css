@@ -54,6 +54,15 @@ h1 {
     color: hsl(50, 90%, 75%);
 }
 
+fieldset {
+    background-color: beige;/*hsl(50, 90%, 75%);*/
+    border-radius: 10px;
+
+    & legend {
+        background-color: lightsteelblue;
+    }
+}
+
 
 
 /* HEADER MENU */
@@ -194,10 +203,6 @@ header > div {
          }
 
     }
-    /*& a {*/
-    /*    display: none;*/
-    /*    !*position: absolute;*!*/
-    /*}*/
 
     & a {
         /*background-color: hsla(50, 90%, 75%, 1);*/
@@ -217,9 +222,6 @@ header > div {
 
 span#mobile_menu {
 }
-
-
-
 
 
 /* CONTACT FORM */
@@ -318,11 +320,6 @@ nav#calculators {
     }
 }
 
-/*fieldset.calculators {*/
-/*    display: flex;*/
-/*    flex-flow: column nowrap;*/
-/*}*/
-
 .calculators {
     /*outline: 1px solid red;*/
     /*width: 300px;*/
@@ -361,7 +358,7 @@ main#facility {
 /* CLASSES */
 section.float {
     blockquote {
-        background-color: hsl(50, 90%, 75%);
+        background-color: beige;/*hsl(50, 90%, 75%);*/
     }
 }
 
