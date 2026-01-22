@@ -2,6 +2,7 @@
 
 html {
     /*height: 100%;*/
+    /*position: relative;*/
     max-width: 1920px;
     margin: auto;
     background: linear-gradient(
@@ -47,6 +48,16 @@ header {
 
 }
 
+footer {
+    clear:both;
+    background-color: brown;
+    color: white;
+    margin-top: 80px;
+    padding: 10px;
+    /*position: absolute;*/
+    /*bottom: 0;*/
+}
+
 h1 {
     text-align: center;
     line-height: 3em;
@@ -54,12 +65,27 @@ h1 {
     color: hsl(50, 90%, 75%);
 }
 
+figcaption {
+    color: hsl(50, 90%, 75%);
+}
+
+form {
+    /*gap: 30px;*/
+    margin: auto;
+    max-width: 600px;
+}
+
 fieldset {
     background-color: beige;/*hsl(50, 90%, 75%);*/
     border-radius: 10px;
+    border-color: firebrick;
+    margin: 30px;
+    /*gap: 40px;*/
 
     & legend {
         background-color: lightsteelblue;
+        border-radius: 10px;
+        border: 1px dashed firebrick;
     }
 }
 
@@ -223,19 +249,27 @@ header > div {
 span#mobile_menu {
 }
 
+/* COACHES */
+main#coach_grid {
+    & div {
+        min-height: 350px;
+        margin: 20px;
+    }
+}
+
 
 /* CONTACT FORM */
 form#contact_form, fieldset.contact {
-    display: flex;
-    flex-flow: column wrap;
+    /*display: flex;*/
+    /*flex-flow: column wrap;*/
     /*justify-content: center;*/
     align-content: center;
     /*align-items: center;*/
-    gap: 20px;
+    /*gap: 20px;*/
 }
 
 label {
-    width: 100%;
+    /*width: 100%;*/
     /*outline: 1px solid red;*/
 }
 
@@ -248,7 +282,7 @@ input, select {
 /* MEMBERSHIP CARDS */
 main#membership {
     display: grid;
-    outline: 1px solid red;
+    /*outline: 1px solid red;*/
     grid-template-columns: repeat(auto-fit, minmax(100px, 500px));
     /*grid-template-rows: repeat(2, minmax(1fr, 300px));*/
     gap: 80px;
@@ -260,7 +294,7 @@ main#membership {
         text-align: justify;
         min-width: 100px;
         max-width: 700px;
-        border:2px solid red;
+        border:2px solid firebrick;
         border-radius: 20px;
         background-color: beige;/*hsl(50, 100%, 80%);*/
 

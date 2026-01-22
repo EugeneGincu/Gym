@@ -12,16 +12,22 @@ body {
     background-blend-mode: overlay; /* Adjust to preference */
 
     width: 95%;
-    box-shadow: darkgray 0 0 10px 5px;
+    box-shadow: dimgray 0 0 10px 5px;
 }
 
 header {
     box-shadow: gray 0 5px 5px 0;
 }
 
+
 h1 {
     color: firebrick;
     background-color:unset;
+}
+
+figcaption {
+    color: unset;
+    text-align: center;
 }
 
 
@@ -39,10 +45,7 @@ h1 {
     outline: 1px solid red;
 }
 
-form {
-    margin: auto;
-    max-width: 600px;
-}
+
 
 /* CLASSES PAGE*/
 section#classes {
@@ -53,7 +56,7 @@ section#classes {
 
 /* LOCATIONS PAGE */
 section.float {
-    & div {
+    & figure {
         clear: both;
         margin: 20px 0;
         /*margin:auto;*/
@@ -61,7 +64,7 @@ section.float {
     }
 
     & img {
-        width: 400px;
+        width: 700px;
         margin: 20px;
     }
 
@@ -73,11 +76,12 @@ section.float {
         float: right;
     }
 
-    & blockquote {
+    & figcaption {
         margin: auto;
-        width:600px;
+        width:500px;
         align-content: space-evenly;
         padding-top: 60px;
+        color: unset;
     }
 }
 
@@ -87,20 +91,17 @@ main#facility {
     flex-flow: row wrap;
     gap: 30px;
 
-    & > div {
-        flex: 0 1 800px;
+    & > figure {
+        flex: 0 1 700px;
         /*outline: 1px solid red;*/
     }
 
     & img {
-        width: 70%;
+        width: 100%;
     }
 }
 
-/* FOOTER */
-footer {
-    clear:both;
-}
+
 
 /****************************************************************/
 /* HEADER MENU > 1200PX */
