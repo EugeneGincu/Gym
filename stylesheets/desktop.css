@@ -231,6 +231,12 @@ a.location_link {
     color: green;
 }
 
+nav#scheduleNav {
+    float: left;
+    border-right: 2px dashed red;
+    border-bottom: none;
+}
+
 
 
 

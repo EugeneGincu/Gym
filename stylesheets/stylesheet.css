@@ -308,18 +308,21 @@ main#membership {
 nav#scheduleNav {
     width: 300px;
     /*display: inline;*/
-    border-right: 2px dashed red;
-    float:left;
+    border-bottom: 2px dashed red;
+    /*float:left;*/
+    background-color: hsla(50, 90%, 75%, 1);
+    margin: auto;
 }
 
 table#schedule {
-    margin: 20px;
+
     border-collapse: separate;
     border-spacing: 2px;
-    display:inline-table;
+    /*display:inline-table;*/
     background: linear-gradient(135deg, mediumpurple, cadetblue);
     /*outline: 1px solid red;*/
     caption-side: top;
+    margin: auto;
 
     & td {
         /*border: 1px solid red;*/
