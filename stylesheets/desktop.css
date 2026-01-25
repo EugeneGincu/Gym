@@ -7,10 +7,10 @@
 /*    display: grid;*/
 /*}*/
 body {
-    background-color: rgba(255, 255, 255, 0.8);
+    /*background-color: rgba(255, 255, 255, 0.8);*/
     background-image: url('../images/concrete.png');
     background-blend-mode: overlay; /* Adjust to preference */
-
+    background-color: rgba(255,253,250, 0.95);
     width: 95%;
     box-shadow: dimgray 0 0 10px 5px;
 }
@@ -19,15 +19,30 @@ header {
     box-shadow: gray 0 5px 5px 0;
 }
 
+footer {
+    /*box-shadow: black 0 -5px 10px 0;*/
+    /*box-shadow: black 0 0 8px 3px;*/
+    /*border-top: 3px solid dimgray;*/
+    /*background-color: rgba(180, 40, 40, 1);*/
+
+    background-color: rgb(160,160,160);
+    color: black;
+    background-image: url('../images/gym_floor.webp');
+    background-blend-mode: lighten; /* Adjust to preference */
+    background-size: 250px 250px;
+}
+
 
 h1 {
     color: firebrick;
     background-color:unset;
 }
 
+
 figcaption {
     color: unset;
     text-align: center;
+    background-color: unset;
 }
 
 
@@ -148,10 +163,16 @@ main#facility {
                 /*background: transparent;*/
                 /*background-color: hsl(50, 100%, 80%);*/
                 /*outline:1px solid firebrick;*/
-                box-shadow:inset 0 0 5px firebrick;
+                /*box-shadow:inset 0 0 5px firebrick;*/
+                box-shadow: gray 0 0 3px;
                 border-radius: 10px;
+                /*background-color: hsla(50, 90%, 75%, 1);*/
                 /*justify-content: center;*/
                 align-items: center;
+
+                & :hover {
+                    box-shadow: inset 0 3px 10px 0 hsl(0, 70%, 45%), inset 0 -3px 10px 0 hsl(0, 70%, 45%);
+                }
 
                 & a {
                     width: 85%;
@@ -235,6 +256,21 @@ nav#scheduleNav {
     float: left;
     border-right: 2px dashed red;
     border-bottom: none;
+    background-color: unset;
+}
+
+/* CROSS REFERENCES */
+section#cross_references {
+    /*text-align: justify;*/
+    column-count: 3;
+    column-gap: 50px;
+    column-rule: 2px dashed crimson;
+    background-color: unset;
+    box-shadow: unset;
+    & dd {
+        orphans: 3;
+        widows: 3;
+    }
 }
 
 

@@ -40,6 +40,7 @@ header {
     /*align-content: center;*/
     /*margin: 0;*/
     font-size: 1.4em;
+    background-color: firebrick;
 
     /*border-bottom: 1px solid red;*/
 
@@ -50,23 +51,30 @@ header {
 
 footer {
     clear:both;
-    background-color: brown;
+    background-color: rgb(140, 44, 44);
     color: white;
     margin-top: 80px;
     padding: 10px;
     /*position: absolute;*/
     /*bottom: 0;*/
+    /*box-shadow: gray 0 -10px 10px -8px;*/
+
 }
 
 h1 {
     text-align: center;
     line-height: 3em;
-    background-color: firebrick;
+    background-color: cadetblue;
     color: hsl(50, 90%, 75%);
 }
 
+figure {
+    background-color: beige;
+}
+
 figcaption {
-    color: hsl(50, 90%, 75%);
+    /*color: hsl(50, 90%, 75%);*/
+    background-color: beige;
 }
 
 form {
@@ -315,7 +323,6 @@ nav#scheduleNav {
 }
 
 table#schedule {
-
     border-collapse: separate;
     border-spacing: 2px;
     /*display:inline-table;*/
@@ -394,9 +401,19 @@ main#facility {
 
 /* CLASSES */
 section.float {
-    blockquote {
-        background-color: beige;/*hsl(50, 90%, 75%);*/
+    figcaption {
+        /*background-color: beige;!*hsl(50, 90%, 75%);*!*/
     }
+}
+
+/* CROSS REFERENCES */
+section#cross_references {
+    background-color: beige;
+    /*border-top: 2px solid firebrick;*/
+    /*border-bottom: 2px solid firebrick;*/
+    box-shadow: inset gray 0 8px 5px -5px,
+                inset gray 0 -8px 5px -5px;
+    padding: 10px;
 }
 
 
