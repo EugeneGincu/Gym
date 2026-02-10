@@ -69,12 +69,15 @@ h1 {
 }
 
 figure {
-    background-color: beige;
+    /*background-color: beige;*/
 }
 
 figcaption {
     /*color: hsl(50, 90%, 75%);*/
     background-color: beige;
+    border-radius: 15px 5px;
+    padding: 10px;
+    /*margin: auto;*/
 }
 
 form {
