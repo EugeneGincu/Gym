@@ -60,7 +60,19 @@ figcaption {
     outline: 1px solid red;
 }
 
+/* MEMBERSHIP PAGE */
+main#membership {
+    display: grid;
+    /*outline: 1px solid red;*/
+    grid-template-columns: repeat(auto-fit, minmax(100px, 500px));
+    /*grid-template-rows: repeat(2, minmax(1fr, 300px));*/
+    gap: 80px;
+    justify-content: center;
 
+    & div {
+        margin: unset;
+    }
+}
 
 /* CLASSES PAGE*/
 section#classes {
@@ -133,6 +145,10 @@ main#facility {
         background: hsla(50, 90%, 75%, 1);
         /*height: 80px;*/
         /*text-align: right;*/
+
+        & > div {
+            color: seagreen;
+        }
     }
 
     /* MENU HOVER EFFECTS*/
@@ -159,16 +175,21 @@ main#facility {
                 display: flex;
                 flex-flow: column nowrap;
                 gap: 10px;
+                /*box-shadow: gray 0 0 3px;*/
+                box-shadow: gray 0 0 3px , gray 3px 3px 3px 3px;
+                border-radius: 10px;
+                align-items: center;
+                background-image: url('../images/concrete.png');
+                background-blend-mode: overlay; /* Adjust to preference */
+                background-color: rgba(255,253,250, 0.95);
 
                 /*background: transparent;*/
                 /*background-color: hsl(50, 100%, 80%);*/
                 /*outline:1px solid firebrick;*/
                 /*box-shadow:inset 0 0 5px firebrick;*/
-                box-shadow: gray 0 0 3px;
-                border-radius: 10px;
                 /*background-color: hsla(50, 90%, 75%, 1);*/
                 /*justify-content: center;*/
-                align-items: center;
+
 
                 & :hover {
                     box-shadow: inset 0 3px 10px 0 hsl(0, 70%, 45%), inset 0 -3px 10px 0 hsl(0, 70%, 45%);

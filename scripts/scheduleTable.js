@@ -29,6 +29,13 @@ function populateTable(location) {
     row.appendChild(cell);
     cell.innerHTML = daySchedule(date.getDay(), location) + "<i>" + date.getDate() + "/" + (date.getMonth()+1) + "</i>"//"/Day: " + date.getDay();
 
+    if (date.getDate() === (new Date()).getDate() && date.getMonth() === (new Date()).getMonth()) {
+        cell.style.color = 'red';
+        cell.style.borderStyle = 'solid';
+        cell.style.borderWidth = '2px';
+        cell.style.borderColor = 'red';
+    }
+
     if (date.getDay() === 6) {
         table.tBodies[0].appendChild(row);
         row = document.createElement('tr');
