@@ -7,10 +7,9 @@
 /*    display: grid;*/
 /*}*/
 body {
-    /*background-color: rgba(255, 255, 255, 0.8);*/
+    background-color: rgba(255, 255, 255, 0.8);
     background-image: url('../images/concrete.png');
     background-blend-mode: overlay; /* Adjust to preference */
-    background-color: rgba(255,253,250, 0.95);
     width: 95%;
     box-shadow: dimgray 0 0 10px 5px;
 }
@@ -181,7 +180,7 @@ main#facility {
                 align-items: center;
                 background-image: url('../images/concrete.png');
                 background-blend-mode: overlay; /* Adjust to preference */
-                background-color: rgba(255,253,250, 0.95);
+                background-color: rgba(255,253,250, 0.8);
 
                 /*background: transparent;*/
                 /*background-color: hsl(50, 100%, 80%);*/
