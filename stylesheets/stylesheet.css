@@ -376,14 +376,29 @@ table#schedule {
     }
 }
 
-/* CALCULATORS */
-nav#calculators {
-    /*display: inline-block;*/
-    width: 200px;
+@media (max-width:1199px) {
+    /* CALCULATORS */
+    nav#calculators_list {
+        /*display: inline-block;*/
+        /*outline: 1px solid red;*/
+        text-align: center;
 
-    & a {
-        outline: 1px solid red;
+        & ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        & a {
+            font-size: 1.4em;
+            color: hsla(50, 90%, 75%, 1);
+
+        }
     }
+}
+
+section#heroImage img{
+    /*outline: 1px solid red;*/
+    /*height: 200px;*/
 }
 
 .calculators {

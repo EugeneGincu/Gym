@@ -59,6 +59,14 @@ figcaption {
     outline: 1px solid red;
 }
 
+/* CALCULATORS PAGE */
+nav#calculators_list {
+
+    & a {
+        color: unset;
+    }
+}
+
 /* MEMBERSHIP PAGE */
 main#membership {
     display: grid;
