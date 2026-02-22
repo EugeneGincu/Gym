@@ -416,22 +416,23 @@ section#heroImage {
         /*top: 0;*/
         /*left: 0;*/
         animation: slide 9s infinite;
-        /*transform: translateX(100%);*/
+        transform: translateX(100%);
         opacity: 0;
     }
 }
 
-#heroImage figure img:nth-child(1) { animation-delay: 0s; }
-#heroImage figure img:nth-child(2) { animation-delay: 3s; }
-#heroImage figure img:nth-child(3) { animation-delay: 6s; }
+#heroImage figure img:nth-child(1) { animation-delay: -6s; opacity: 1; transform: translate(0); }
+#heroImage figure img:nth-child(2) { animation-delay: -3s; }
+#heroImage figure img:nth-child(3) { animation-delay: 0s; }
 
 @keyframes slide {
-    0%   { opacity: 0; transform: translateX(100%); }
-    5%   { opacity: 1; transform: translateX(0); }      /* slide in */
-    30%  { opacity: 1; transform: translateX(0); }      /* hold */
-    35%  { opacity: 1; transform: translateX(-100%); }  /* slide out */
-    100% { opacity: 0; transform: translateX(100%); }   /* wait off-screen */
+    0%   { opacity: 1; transform: translateX(100%); z-index: 1; }  /* off-screen, on top */
+    8%   { opacity: 1; transform: translateX(0);    z-index: 1; }  /* slid in, on top */
+    9%   { opacity: 1; transform: translateX(0);    z-index: 0; }  /* drop behind resting images */
+    99%  { opacity: 1; transform: translateX(0);    z-index: 0; }  /* stay visible while resting */
+    100% { opacity: 0; transform: translateX(100%); z-index: 0; }  /* snap back hidden */
 }
+
 
 .calculators {
     /*outline: 1px solid red;*/
