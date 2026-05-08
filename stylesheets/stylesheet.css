@@ -351,7 +351,14 @@ table#schedule {
     background: linear-gradient(135deg, mediumpurple, cadetblue);
     /*outline: 1px solid red;*/
     caption-side: top;
+	
     margin: auto;
+	
+	caption {
+		font-size: 2em;
+		background-color: hsla(50, 90%, 75%, 1);
+		color: firebrick;
+	}
 
     & td {
         /*border: 1px solid red;*/
@@ -415,22 +422,45 @@ section#heroImage {
         position: absolute;
         /*top: 0;*/
         /*left: 0;*/
-        animation: slide 9s infinite;
         transform: translateX(100%);
+        animation-duration: 9s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
         opacity: 0;
     }
 }
 
-#heroImage figure img:nth-child(1) { animation-delay: -6s; opacity: 1; transform: translate(0); }
-#heroImage figure img:nth-child(2) { animation-delay: -3s; }
-#heroImage figure img:nth-child(3) { animation-delay: 0s; }
+#heroImage figure img:nth-child(1) { animation-name: slide1; }
+#heroImage figure img:nth-child(2) { animation-name: slide2; }
+#heroImage figure img:nth-child(3) { animation-name: slide3; }
 
-@keyframes slide {
-    0%   { opacity: 1; transform: translateX(100%); z-index: 1; }  /* off-screen, on top */
-    8%   { opacity: 1; transform: translateX(0);    z-index: 1; }  /* slid in, on top */
-    9%   { opacity: 1; transform: translateX(0);    z-index: 0; }  /* drop behind resting images */
-    99%  { opacity: 1; transform: translateX(0);    z-index: 0; }  /* stay visible while resting */
-    100% { opacity: 0; transform: translateX(100%); z-index: 0; }  /* snap back hidden */
+@keyframes slide1 {
+    0%   { opacity: 1; transform: translateX(100%); z-index: 1; }  /* slide in from right */
+    10%  { opacity: 1; transform: translateX(0);    z-index: 1; }  /* slid in */
+    30%  { opacity: 1; transform: translateX(0);    z-index: 1; }  /* hold */
+    31%  { opacity: 1; transform: translateX(0);    z-index: 0; }  /* drop behind */
+    99%  { opacity: 1; transform: translateX(0);    z-index: 0; }  /* stay visible to be covered */
+    100% { opacity: 1; transform: translateX(0);    z-index: 0; }  /* stay visible, loop back to 0% covers it */
+}
+
+@keyframes slide2 {
+    0%   { opacity: 0; transform: translateX(100%); z-index: 0; }  /* waiting */
+    33%  { opacity: 0; transform: translateX(100%); z-index: 0; }  /* still waiting */
+    34%  { opacity: 1; transform: translateX(100%); z-index: 1; }  /* start sliding in */
+    44%  { opacity: 1; transform: translateX(0);    z-index: 1; }  /* slid in */
+    63%  { opacity: 1; transform: translateX(0);    z-index: 1; }  /* hold */
+    64%  { opacity: 1; transform: translateX(0);    z-index: 0; }  /* drop behind */
+    99%  { opacity: 1; transform: translateX(0);    z-index: 0; }  /* stay visible */
+    100% { opacity: 0; transform: translateX(100%); z-index: 0; }  /* snap back */
+}
+
+@keyframes slide3 {
+    0%   { opacity: 0; transform: translateX(100%); z-index: 0; }
+    66%  { opacity: 0; transform: translateX(100%); z-index: 0; }
+    67%  { opacity: 1; transform: translateX(100%); z-index: 1; }
+    77%  { opacity: 1; transform: translateX(0);    z-index: 1; }
+    99%  { opacity: 1; transform: translateX(0);    z-index: 0; }  /* drop behind before loop */
+    100% { opacity: 1; transform: translateX(0);    z-index: 0; }  /* stay visible while slide1 covers it */
 }
 
 

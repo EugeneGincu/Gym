@@ -7,7 +7,7 @@ function populateTable(location) {
     let table = document.getElementById('schedule');
     table.tBodies[0].remove();
     table.createTBody();
-    table.caption.textContent = location;
+    table.caption.textContent = "Schedule for " + location;
 
     let date = new Date();
     date.setHours(3);
