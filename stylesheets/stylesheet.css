@@ -355,11 +355,14 @@ table#schedule {
     margin: auto;
 	
 	caption {
-		font-size: 1.5em;
+		font-size: 1.6em;
 		background-color: cadetblue;
 		color: hsla(50, 90%, 75%, 1);
 		text-transform: uppercase;
 		font-weight: bold;
+		font-family: 'segoe ui', sans-serif;
+		letter-spacing: 0.3em;
+		word-spacing: 0.6em;
 	}
 
     & td {
