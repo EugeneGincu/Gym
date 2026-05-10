@@ -70,6 +70,10 @@ h1 {
     /*background-color: firebrick;*/
 }
 
+h2 {
+	text-shadow: 2px 2px white;
+}
+
 figure {
     /*background-color: beige;*/
 }
@@ -106,6 +110,7 @@ fieldset {
 
 blockquote {
 	text-align: justify;
+	text-indent: 10%;
 }
 
 
