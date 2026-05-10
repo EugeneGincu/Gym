@@ -16,6 +16,9 @@ body {
 
 header {
     box-shadow: gray 0 5px 5px 0;
+	position: sticky;
+	top: 0;
+	z-index: 999;
 }
 
 footer {

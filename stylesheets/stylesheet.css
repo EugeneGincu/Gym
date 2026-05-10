@@ -79,6 +79,8 @@ figcaption {
     background-color: beige;
     border-radius: 15px 5px;
     padding: 10px;
+	text-align: center;
+	font-size:1.2em
     /*margin: auto;*/
 }
 
@@ -348,7 +350,7 @@ table#schedule {
     border-collapse: separate;
     border-spacing: 2px;
     /*display:inline-table;*/
-    background: linear-gradient(135deg, mediumpurple, cadetblue);
+    background: linear-gradient(135deg, cadetblue, mediumpurple);
     /*outline: 1px solid red;*/
     caption-side: top;
 	
@@ -363,21 +365,34 @@ table#schedule {
 		font-family: 'segoe ui', sans-serif;
 		letter-spacing: 0.3em;
 		word-spacing: 0.6em;
+		font-style:oblique;
 	}
+	
+	
 
     & td {
         /*border: 1px solid red;*/
         width:100px;
         height:100px;
         position: relative;
-        background-color: white;
+        
 
         & i {
             position: absolute;
             bottom:0;
             right:0;
         }
+		
     }
+		
+	& tr {
+		&:nth-child(odd) {
+			background-color: #E5E5E5;
+		}
+		&:nth-child(even) {
+			background-color: white;
+		}
+	}
 
     & td.empty {
         visibility: hidden;
@@ -385,6 +400,7 @@ table#schedule {
 
     & th {
         background-color:  lightsteelblue;
+		letter-spacing: 0.05em;
     }
 }
 
