@@ -104,6 +104,10 @@ fieldset {
     }
 }
 
+blockquote {
+	text-align: justify;
+}
+
 
 
 /* HEADER MENU */
@@ -191,7 +195,7 @@ header nav div {
 /* COACHES */
 #coach_grid img{
     width: 200px;
-    margin: 10px;
+    margin: 20px;
     border: 1px solid green;
     border-radius: 80px;
     float: left;
