@@ -10,7 +10,8 @@ html {
         rgba(0, 0, 0, 0.5)
 ), url('../images/gym_floor.webp');
     background-size: 250px 250px;
-
+	background-repeat: round;
+	background-attachment: fixed;	
     & img {
         width: 100%
     }
@@ -41,6 +42,7 @@ header {
     /*margin: 0;*/
     font-size: 1.4em;
     background-color: firebrick;
+	font-family: tahoma, sans-serif;
 
     /*border-bottom: 1px solid red;*/
 
@@ -65,11 +67,21 @@ footer {
 h1 {
     text-align: center;
     line-height: 3em;
+	font-family: verdana, sans-serif;
     /*background-color: cadetblue;*/
     /*color: hsl(50, 90%, 75%);*/
     color:hsla(50, 90%, 75%, 1);
+	font-variant: small-caps;
     /*background-color: firebrick;*/
 	
+}
+
+
+
+h2, h3 {
+	font-family: 'Trebuchet MS', sans-serif;
+	font-variant: small-caps;
+
 }
 
 figure {
@@ -111,6 +123,10 @@ fieldset {
 blockquote {
 	text-align: justify;
 	text-indent: 10%;
+	
+	&:first-of-type::first-letter {
+		font-size: 1.3em;
+	}
 }
 
 li {
@@ -347,6 +363,9 @@ main#membership {
 		& h2 {
 			text-align:center;
 			text-shadow: 2px 2px white;
+			font-family: verdana, sans-serif;
+			font-size: 1.3em;
+			line-height: 1.5em;
 		}
 
         &#gold h2 {
@@ -538,7 +557,7 @@ section#heroImage {
 /* FACILITY */
 main#facility {
     & div {
-        outline: 1px solid red;
+        outline: 10px solid red;
         background: white;
         border-radius: 5px;
         margin: 20px;

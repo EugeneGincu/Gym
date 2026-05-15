@@ -10,6 +10,8 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     background-image: url('../images/concrete.png');
     background-blend-mode: overlay; /* Adjust to preference */
+	background-repeat: round;
+	
     width: 95%;
     box-shadow: dimgray 0 0 10px 5px;
 }
@@ -34,6 +36,9 @@ footer {
     background-size: 250px 250px;
 }
 
+section#heroImage {
+	margin-top: 20px;
+}
 
 h1 {
     color: firebrick;
@@ -127,6 +132,8 @@ main#facility {
     display: flex;
     flex-flow: row wrap;
     gap: 30px;
+	justify-content: center;
+	
 
     & > figure {
         flex: 0 1 700px;
