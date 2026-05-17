@@ -32,15 +32,17 @@ TRU
     <form id="contact_form">
         <fieldset class="contact" name="meta">
             <legend>Location & Service</legend>
-            <label>Location
+			<div class="formRow">
+				<label for="form_location">Location</label>
                 <select id="form_location">
                     <option value="Calgary">Calgary</option>
                     <option value="Vancouver">Vancouver</option>
                     <option value="Toronto">Toronto</option>
                     <option value="Halifax">Halifax</option>
                 </select>
-            </label>
-            <label>Service
+			</div>
+			<div class="formRow">
+				<label for="form_service">Service</label>
                 <select id="form_service">
                     <option value="general">General Inquiry</option>
                     <option value="personal_coaching">Personal Coaching</option>
@@ -48,27 +50,35 @@ TRU
                     <option value="booking">Booking</option>
                     <option value="other">Other</option>
                 </select>
-            </label>
+            </div>
         </fieldset>
         <fieldset class="contact" name="contact">
             <legend>Contact Us</legend>
-            <label>Name:
-                <input type='text'/>
-            </label>
-            <label>Email:
-                <input type='text'/>
-            </label>
-            <label>Phone:
-                <input type='text'/>
-            </label>
-            <label id="membership_selector" hidden>Membership Tier:
+			<div class="formRow">
+				<label for="contact_name">Name:</label>
+                <input id="contact_name" type='text'/>
+			</div>
+			<div class="formRow">
+            <label for="contact_email">Email:</label>
+                <input id="contact_email" type='text'/>
+            
+			</div>
+			<div class="formRow">
+            <label for="contact_phone">Phone:</label>
+                <input id="contact_phone" type='text'/>
+            
+			</div>
+			<div class="formRow" id="membership_selector" hidden>
+            <label for="membership_tier" >Membership Tier:</label>
                 <select id="membership_tier">
                     <option value="platinum">Platinum</option>
                     <option value="gold">Gold</option>
                     <option value="silver">Silver</option>
                 </select>
-            </label>
-            <label id="coaching_selector" hidden>Coaching:
+            
+			</div>
+			<div class="formRow" id="coaching_selector" hidden>
+            <label for="coaching" >Coaching: </label>
                 <select id="coaching">
                     <option value="strength">Strength</option>
                     <option value="cardio">Cardio</option>
@@ -76,18 +86,23 @@ TRU
                     <option value="nutritionist">Nutritionist</option>
                     <option value="stretching">Stretching</option>
                 </select>
-            </label>
-            <label id="booking_selector" hidden>Book class/room:
+           
+			</div>
+			<div  class="formRow" id="booking_selector" hidden>
+            <label for="booking_selector" >Book class/room:</label>
                 <select id="booking">
                     <option value="spin">Spin class</option>
                     <option value="fitness">Fitness class</option>
                     <option value="stretching">Stretching class</option>
                     <option value="room">Hosting room</option>
                 </select>
-            </label>
-            <label>Message:
-                <textarea cols="30"></textarea>
-            </label>
+            
+			</div>
+			<div class="formRow">
+            <label for="contact_textarea">Message:</label>
+                <textarea id="contact_textarea" cols="30"></textarea>
+            
+			</div>
         </fieldset>
     </form>
     <footer>

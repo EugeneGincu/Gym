@@ -305,6 +305,11 @@ nav#scheduleNav {
 
 /* CROSS REFERENCES */
 section#cross_references {
+	
+	& h1 {
+		column-span: all;
+	}
+	
 	margin: 20px;
     /*text-align: justify;*/
     column-count: 3;
