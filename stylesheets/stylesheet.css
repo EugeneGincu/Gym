@@ -43,7 +43,6 @@ header {
     font-size: 1.4em;
     background-color: firebrick;
 	font-family: tahoma, sans-serif;
-
     /*border-bottom: 1px solid red;*/
 
 
@@ -321,6 +320,12 @@ form#contact_form, fieldset.contact {
     /*gap: 20px;*/
 }
 
+div.formRow {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
 label {
 	display: block;
 	margin: 10px;
@@ -393,6 +398,8 @@ nav#scheduleNav {
     margin: auto;
 }
 
+
+
 table#schedule {
     border-collapse: separate;
     border-spacing: 3px;
@@ -400,10 +407,32 @@ table#schedule {
     background: linear-gradient(135deg, cadetblue, mediumpurple);
     /*outline: 1px solid red;*/
     caption-side: top;
-	
     margin: auto;
 	
-	caption {
+	
+	
+	& thead {
+		outline: 2px solid black;
+	}
+	
+	
+	& col.weekend {
+		width: 100px;
+		background-color: lightsteelblue;
+	}
+	
+	& col.weekday {
+		width: 100px;
+		background: white;
+		
+		&:nth-of-type(odd) {
+				background-color: #E5E5E5;
+			}
+	}
+	
+	
+	
+	& caption {
 		font-size: 1.6em;
 		background-color: cadetblue;
 		color: hsla(50, 90%, 75%, 1);
@@ -418,10 +447,40 @@ table#schedule {
 	
 	
 
-    & td {
+    
+		
+	& tbody {
+		& tr {
+			height:100px;
+			/* &:nth-child(odd) {
+				background-color: #E5E5E5;
+			}
+			
+			&:nth-child(even) {
+				background-color: white;
+			} */
+						
+		}
+		& td {
+			
+			
+			/* &:nth-child(odd) {
+				background-color: #E5E5E5;
+			}
+		
+			&:first-of-type {
+				background-color: lightsteelblue;
+			}
+			
+			&:nth-of-type(7) {
+				background-color: lightsteelblue;
+			} */			
+		}
+	}
+	
+	
+	& td {
         /*border: 1px solid red;*/
-        width:100px;
-        height:100px;
         position: relative;
 		padding: 3px;        
 
@@ -431,25 +490,25 @@ table#schedule {
             right:0;
         }
 		
-    }
 		
-	& tr {
-		&:nth-child(odd) {
-			background-color: #E5E5E5;
-		}
-		&:nth-child(even) {
-			background-color: white;
-		}
-	}
+    }
 
     & td.empty {
         visibility: hidden;
     }
 
     & th {
-        background-color:  lightsteelblue;
+        /* background-color:  lightsteelblue; */
 		letter-spacing: 0.05em;
     }
+	
+	& tfoot {
+		text-align: right;
+		
+		& td {
+			background-color: lightgray;
+		}
+	}
 }
 
 @media (max-width:1199px) {
