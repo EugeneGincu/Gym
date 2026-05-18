@@ -33,46 +33,44 @@
             <p>Fill out the fields you need. Leave others blank. Click Calculate to see results for completed sections.</p>
 
             <!-- Shared Basic Inputs -->
-            <div class="radio-group">
-                <label>Units:</label>
-                <label>
+            <div class="formRow">
+				<label>Units:</label>
+				<span class="radio-group">
+					<label for="metric_body_comp">Metric (cm, kg)</label>
                     <input type="radio" name="units_body" value="metric" id="metric_body_comp" checked/>
-                    Metric (cm, kg)
-                </label>
-                <label>
+					<label for="imperial_body_comp">Imperial (ft, in, lbs)</label>
                     <input type="radio" name="units_body" value="imperial" id="imperial_body_comp"/>
-                    Imperial (ft, in, lbs)
-                </label>
-            </div>
-            <div>
+				</span>
+            <div class="formRow">
                 <h3>Common measurements</h3>
-                <label>Height
+                <label for="height_m_or_feet">Height</label>
                     <input type='number' id='height_m_or_feet' placeholder='1' min='2' max='8' step='1'/> (m, feet)
                     <input type='number' id='height' placeholder="170" min="0" max="250" step="1"/> (cm, in)
-                </label>
+                
             </div>
-            <div>
+            <div class="formRow">
 
-                <label>Weight
-                    <input type='number' id='weight' placeholder="70" min="20" max="500" step="0.1"/>
+                <label for="weight">Weight(kg, lbs)</label>
+                    <input type="number" id="weight" placeholder="70" min="20" max="500" step="0.1"/>
                     <!--                    <span class="unit" id="weight_unit">kg</span>-->
-                    (kg, lbs)
-                </label>
             </div>
-            <div>
-                <label>Age
+            <div class="formRow">
+                <label>Age</label>
                     <input type='number' id='age' placeholder="25" min="10" max="100"/>
-                </label>
+                
             </div>
-            <div class="radio-group">
-                <label>Gender:</label>
+			<div class="formRow">
+			<label>Gender:</label>
+            <span class="radio-group">
+                
                 <label>
                     <input type="radio" name='gender' value='male' id='male' checked/>Male
                 </label>
                 <label>
                     <input type="radio" name='gender' value='female' id='female'/>Female
                 </label>
-            </div>
+            </span>
+			</div>
 
 
 
@@ -81,19 +79,19 @@
 
             <h3>Body Fat % Calculator (Optional)</h3>
             <p class="help-text">Fill these out if you want body fat percentage calculated</p>
-            <div>
+            <div class="formRow">
                 <label>Neck Circumference
                     <input type='number' id='neck' placeholder="38" min="20" max="60" step="0.1"/>
                     (cm, in)
                 </label>
             </div>
-            <div>
+            <div class="formRow">
                 <label>Waist Circumference
                     <input type='number' id='waist' placeholder="85" min="40" max="200" step="0.1"/>
                     (cm, in)
                 </label>
             </div>
-            <div>
+            <div class="formRow">
                 <label id="hip_label">Hip Circumference (females only)
                     <input type='number' id='hip' placeholder="95" min="50" max="200" step="0.1"/>
                     (cm, in)
@@ -102,22 +100,24 @@
 
             <!-- Ideal Weight Specific Input -->
             <h3>Ideal Weight Calculator (Optional)</h3>
-            <div class="radio-group">
+            <div class="formRow">
+			<span class="radio-group">
                 <label>Frame Size:</label>
                 <label><input type="radio" name="frame_size" value="0.95" id="small_frame"/>Small</label>
                 <label><input type="radio" name="frame_size" value="1.0" id="medium_frame" checked/>Medium</label>
                 <label><input type="radio" name="frame_size" value="1.05" id="large_frame"/>Large</label>
-            </div>
+            </span>
+			</div>
             <button type="button" id="calculate_body_comp">Calculate</button>
         </fieldset>
 
         <!--Results-->
         <fieldset class="calculators" id="body_comp_results" hidden>
             <legend>Body Composition Results</legend>
-            <div><label>BMI: <span id="bmi_result" class="result-section"></span></label></div>
-            <div><label>BMR: <span id="bmr_result" class="result-section" ></span></label></div>
-            <div><label>Body Fat %: <span id="body_fat_result" class="result-section" ></span></label></div>
-            <div><label>Ideal Weight: <span id="ideal_weight_result" class="result-section" ></span></label></div>
+            <div class="formRow"><label>BMI: <span id="bmi_result" class="result-section"></span></label></div>
+            <div class="formRow"><label>BMR: <span id="bmr_result" class="result-section" ></span></label></div>
+            <div class="formRow"><label>Body Fat %: <span id="body_fat_result" class="result-section" ></span></label></div>
+            <div class="formRow"><label>Ideal Weight: <span id="ideal_weight_result" class="result-section" ></span></label></div>
         </fieldset>
 
         <fieldset class="calculators" id="workout" hidden>
@@ -125,16 +125,18 @@
             <p class="instructions">Fill out fields for the calculators you want to use. Leave others blank.</p>
             <!-- Calorie Burn Inputs -->
             <!-- Shared Units for Workout -->
-            <div class="radio-group">
+            <div class="formRow">
+			<span class="radio-group">
                 <label>Units:</label>
                 <label><input type="radio" name="units_workout" value="metric" id="metric_workout" checked/>Metric (kg)</label>
                 <label><input type="radio" name="units_workout" value="imperial" id="imperial_workout"/>Imperial (lbs)</label>
-            </div>
+            </span>
+			</div>
             <h3>Calorie Burn Calculator</h3>
-            <div>
+            <div class="formRow">
                 <label>Activity  <input type='number' id='met_value' placeholder="8.0" min="1" max="20" step="0.1"/> MET Value</label>
             </div>
-            <div>
+            <div class="formRow">
                 <details>
                     <summary>Common MET Values</summary>
                     <ul class="met-list">
@@ -150,14 +152,14 @@
                     </ul>
                 </details>
             </div>
-            <div><label>Duration <input type='number' id='duration' placeholder="30" min="1" max="300"/> minutes</label></div>
-            <div><label>Your Weight <input type='number' id='weight_calburn' placeholder="70" min="20" max="300" step="0.1"/> (kg, lbs)</label></div>
+            <div class="formRow"><label>Duration <input type='number' id='duration' placeholder="30" min="1" max="300"/> minutes</label></div>
+            <div class="formRow"><label>Your Weight <input type='number' id='weight_calburn' placeholder="70" min="20" max="300" step="0.1"/> (kg, lbs)</label></div>
 
             <!-- One Rep Max Inputs -->
 
             <h3>One Rep Max Calculator</h3>
-            <div><label>Weight Lifted <input type='number' id='weight_lifted' placeholder="100" min="1" max="500" step="0.5"/> (kg, lbs)</label></div>
-            <div><label>Reps Completed <input type='number' id='reps' placeholder="8" min="1" max="20"/></label>
+            <div class="formRow"><label>Weight Lifted <input type='number' id='weight_lifted' placeholder="100" min="1" max="500" step="0.5"/> (kg, lbs)</label></div>
+            <div class="formRow"><label>Reps Completed <input type='number' id='reps' placeholder="8" min="1" max="20"/></label>
                 <p class="help-text">Note: Results are less accurate above 12 reps</p>
             </div>
             <button type="button" id="calculate_workout">Calculate All Available</button>
@@ -166,8 +168,8 @@
         <fieldset class='calculators' id="workout_results" hidden>
             <!-- Results Container -->
             <legend>Workout Calculator Results</legend>
-            <div><label>Calorie burn: <span id="calorie_burn_result" class="result-section"></span></label></div>
-            <div><label>One Rep Max: <span id="one_rm_result" class="result-section"></span></label></div>
+            <div class="formRow"><label>Calorie burn: <span id="calorie_burn_result" class="result-section"></span></label></div>
+            <div class="formRow"><label>One Rep Max: <span id="one_rm_result" class="result-section"></span></label></div>
 
         </fieldset>
     </form>

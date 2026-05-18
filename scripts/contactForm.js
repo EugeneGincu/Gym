@@ -16,6 +16,7 @@ form.addEventListener('change', event => {
     form.querySelector('#membership_selector').hidden = true;
     form.querySelector('#coaching_selector').hidden = true;
     form.querySelector('#booking_selector').hidden = true;
+	form.querySelector('#booking_date').hidden = true;
 
     if (form_service.value === 'membership'){
         form.querySelector('#membership_selector').hidden = false;
@@ -23,6 +24,7 @@ form.addEventListener('change', event => {
         form.querySelector('#coaching_selector').hidden = false;
     } else if (form_service.value === 'booking') {
         form.querySelector('#booking_selector').hidden = false;
+		form.querySelector('#booking_date').hidden = false;
     }
 });
 
