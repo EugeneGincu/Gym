@@ -241,6 +241,11 @@ header nav div {
         margin: auto;
         color: green;
     }
+	
+	&:hover img {
+		width: 220px;
+		transition: width 0.2s linear;
+	}
 }
 
 /* LOCATION SELECTOR */
@@ -342,26 +347,44 @@ div.formRow {
 	& span {
 		text-align: center;
 	}
+
+
+	& > input#booking_group {
+		flex: 1 0 30px;
+	}
+	
+	& > select#booking {
+		flex: 1 0 60px;
+	}
+	
+	& > textarea#contact_textarea {
+		max-height: 150px;
+	}
+	
+	&#membership_validation span {
+		border-style: inset;
+		border-width: 1px;
+	}
+	
+	& input:focus:invalid {
+		background-color: pink;
+	}
+	
+	& input:focus:valid {
+		background-color: lightgreen;
+	}
+
 }
 
-label {
-	/* display: block; */
-	
-    /*width: 100%;*/
-    /*outline: 1px solid red;*/
-}
+#buttons{
+	text-align: center;
+	margin: 0 100%;
 
-input, select {
-   
-	/* height:1.5em; */
-	/* max-width: 300px; */
-	
-	
-    /*outline: 1px solid green;*/
-}
-
-textarea {
-	/* max-width: 300px; */
+	& input {
+		font-size: 1em;
+		padding: 2 10px;
+		margin: 0 10px;
+	}
 }
 
 
@@ -639,6 +662,8 @@ main#facility {
         border-radius: 5px;
         margin: 20px;
     }
+	
+
 
     & img {
         width: 100%
