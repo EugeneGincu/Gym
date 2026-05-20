@@ -7,7 +7,7 @@ let links = new Map(
     [
         ['Logo', 'index.html'],
         ['Classes', 'classes.html'],
-        ['Facility', 'facility.html'],
+        ['Gallery', 'gallery.html'],
         ['Membership', 'membership.html'],
         ['Coaching', 'coaching.html'],
         ['Contact', 'contact.html'],
@@ -20,7 +20,7 @@ let links = new Map(
     ]
 )
 
-let menu = ['Services','Membership','Facility','Coaching','About','Cross-Reference'];
+let menu = ['Services','Membership','Gallery','Coaching','About','Cross-Reference'];
 
 
 //Header Sub-Menu

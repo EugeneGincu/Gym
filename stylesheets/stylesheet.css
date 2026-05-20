@@ -222,15 +222,7 @@ header nav div {
 /*    display: none;*/
 /*}*/
 /* COACHES */
-#coach_grid img{
-    width: 200px;
-    margin: 20px;
-    border: 1px solid green;
-    border-radius: 80px;
-    float: left;
-}
-
-#coach_grid div{
+ #coach_grid div{
     clear:left;
     font-size: 1.2em;
     text-align: center;
@@ -245,6 +237,15 @@ header nav div {
 	&:hover img {
 		width: 220px;
 		transition: width 0.2s linear;
+	}
+	
+	& img {
+		width: 200px;
+		margin: 20px;
+		border: 1px solid green;
+		border-radius: 80px;
+		float: left;
+		transition: width 0.3s linear;
 	}
 }
 
@@ -596,40 +597,58 @@ section#heroImage {
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
         opacity: 0;
+		
+		&:first-of-type {
+			transform: translateX(0);
+			opacity: 1;
+			z-index: 0;
+		}
     }
 }
 
-#heroImage figure img:nth-child(1) { animation-name: slide1; }
-#heroImage figure img:nth-child(2) { animation-name: slide2; }
-#heroImage figure img:nth-child(3) { animation-name: slide3; }
+#heroImage figure img:nth-child(2) { animation-name: slide1; }
+#heroImage figure img:nth-child(3) { animation-name: slide2; }
+#heroImage figure img:nth-child(4) { animation-name: slide3; }
+
+
 
 @keyframes slide1 {
-    0%   { opacity: 1; transform: translateX(100%); z-index: 1; }  /* slide in from right */
-    10%  { opacity: 1; transform: translateX(0);    z-index: 1; }  /* slid in */
-    30%  { opacity: 1; transform: translateX(0);    z-index: 1; }  /* hold */
-    31%  { opacity: 1; transform: translateX(0);    z-index: 0; }  /* drop behind */
-    99%  { opacity: 1; transform: translateX(0);    z-index: 0; }  /* stay visible to be covered */
-    100% { opacity: 1; transform: translateX(0);    z-index: 0; }  /* stay visible, loop back to 0% covers it */
+    0%   { opacity: 1; transform: translateX(100%); z-index: 0; }     /* Waiting */
+    23%  { opacity: 1; transform: translateX(100%);    z-index: 1; }  /* Appear offscreen and start sliding in */
+    33%  { opacity: 1; transform: translateX(0);    z-index: 1; }     /* Finished sliding in and stay on top */
+    57%  { opacity: 1; transform: translateX(0);    z-index: 0; }     /* Switch to back once next image starts sliding in */
+    100% { opacity: 1; transform: translateX(0);    z-index: 0; }
+	/*0%   { opacity: 1; transform: translateX(100%); z-index: 0; }  
+    10%  { opacity: 1; transform: translateX(100%);    z-index: 0; }  
+    33%  { opacity: 1; transform: translateX(100%);    z-index: 1; }  
+    44%  { opacity: 1; transform: translateX(0);    z-index: 1; }  
+    99%  { opacity: 1; transform: translateX(0);    z-index: 0; }  
+    100% { opacity: 1; transform: translateX(0);    z-index: 0; }  */
 }
 
 @keyframes slide2 {
-    0%   { opacity: 0; transform: translateX(100%); z-index: 0; }  /* waiting */
-    33%  { opacity: 0; transform: translateX(100%); z-index: 0; }  /* still waiting */
-    34%  { opacity: 1; transform: translateX(100%); z-index: 1; }  /* start sliding in */
-    44%  { opacity: 1; transform: translateX(0);    z-index: 1; }  /* slid in */
-    63%  { opacity: 1; transform: translateX(0);    z-index: 1; }  /* hold */
-    64%  { opacity: 1; transform: translateX(0);    z-index: 0; }  /* drop behind */
-    99%  { opacity: 1; transform: translateX(0);    z-index: 0; }  /* stay visible */
-    100% { opacity: 0; transform: translateX(100%); z-index: 0; }  /* snap back */
+	0%   { opacity: 1; transform: translateX(100%); z-index: 0; }  	  /* Waiting */
+    56%  { opacity: 1; transform: translateX(100%);    z-index: 1; }  /* Appear offscreen and start sliding in */
+    66%  { opacity: 1; transform: translateX(0);    z-index: 1; }     /* Finished sliding in and stay on top */
+    91%  { opacity: 1; transform: translateX(0);    z-index: 0; }     /* Switch to back once next image starts sliding in */
+    100% { opacity: 1; transform: translateX(0);    z-index: 0; }
+    /*0%   { opacity: 0; transform: translateX(100%); z-index: 0; }  
+    33%  { opacity: 0; transform: translateX(100%); z-index: 0; }  
+    34%  { opacity: 1; transform: translateX(100%); z-index: 0; }  
+    44%  { opacity: 1; transform: translateX(0);    z-index: 1; }  
+    66%  { opacity: 1; transform: translateX(100%);    z-index: 1; }
+    76%  { opacity: 1; transform: translateX(0);    z-index: 1; }  
+    99%  { opacity: 1; transform: translateX(0);    z-index: 0; }  
+    100% { opacity: 0; transform: translateX(100%); z-index: 0; } */ 
 }
 
 @keyframes slide3 {
-    0%   { opacity: 0; transform: translateX(100%); z-index: 0; }
-    66%  { opacity: 0; transform: translateX(100%); z-index: 0; }
-    67%  { opacity: 1; transform: translateX(100%); z-index: 1; }
-    77%  { opacity: 1; transform: translateX(0);    z-index: 1; }
-    99%  { opacity: 1; transform: translateX(0);    z-index: 0; }  /* drop behind before loop */
-    100% { opacity: 1; transform: translateX(0);    z-index: 0; }  /* stay visible while slide1 covers it */
+    0%   { opacity: 0; transform: translateX(0); z-index: 1; } 		  /* Stay on top */
+    23%  { opacity: 0; transform: translateX(100%); z-index: 0; }     /* Switch to back once next image starts sliding in */
+    /*67%  { opacity: 1; transform: translateX(100%); z-index: 0; }
+    77%  { opacity: 1; transform: translateX(100%);    z-index: 0; }*/
+    90%  { opacity: 1; transform: translateX(100%);    z-index: 1; }  /* Appear offscreen and start sliding in */
+    100% { opacity: 1; transform: translateX(0);    z-index: 1; }     /* Finished sliding in and stay on top */
 }
 
 
@@ -688,6 +707,11 @@ section#cross_references {
 	
 	& h1 {
 		color: firebrick;
+	}
+	
+	& dt {
+		font-weight: bold;
+		font-size: 1.1em;
 	}
 }
 

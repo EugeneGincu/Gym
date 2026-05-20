@@ -36,9 +36,7 @@ footer {
     background-size: 250px 250px;
 }
 
-section#heroImage {
-	margin-top: 20px;
-}
+
 
 h1 {
     color: firebrick;
@@ -143,11 +141,23 @@ main#facility {
 
     & > figure {
         flex: 0 1 700px;
+		text-align: center;
         /*outline: 1px solid red;*/
     }
+	
+	& > figure:hover img {
+		width: 100%;
+		transition: width 0.3s linear;
+	}
+	
+	& figcaption {
+
+		background: unset;
+	}
 
     & img {
-        width: 100%;
+        width: 90%;
+		transition: width 0.3s linear;
     }
 }
 
